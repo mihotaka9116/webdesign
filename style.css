@@ -272,3 +272,32 @@ Smartphone & Tablet
   width: 30%; 
   margin-left: 3%; /* テキストと画像の間隔 */
 }
+
+/* --- Web Design (全体を中央にギュッと集める) --- */
+.new-type { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; /* ★左右中央に配置 */
+  gap: 60px;               /* ★テキストと画像の間隔を固定（お好みで調整） */
+  padding: 100px 20px;     /* 左右の padding-left は解除 */
+}
+
+.new-type .text { 
+  width: auto;             /* 幅を自動にして中身に合わせる */
+  max-width: 500px;        /* 広がりすぎないように制限 */
+}
+
+.new-type .text .text-inner { 
+  padding: 0;              /* 余計な余白をカット */
+}
+
+.new-type .img { 
+  width: 25%;              /* 画像のサイズ */
+  margin-left: 0;          /* gapで調整するのでmarginは不要 */
+}
+
+.new-type .img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
