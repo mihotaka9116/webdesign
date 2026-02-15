@@ -296,3 +296,41 @@ Smartphone & Tablet (Media Queries)
   }
   /* ...（その他のスマホ設定はそのまま）... */
 }
+/*-------------------------------------------
+Contact & Footer
+-------------------------------------------*/
+/* ...（online-storeの記述はそのまま）... */
+
+#footer { 
+  background-color: #666; 
+  padding: 40px 0; /* 上下の余白を少し広げてゆとりを出す */
+}
+#footer .inner { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+/* フッターロゴのサイズ調整 */
+#footer .logo img {
+  width: 70px; /* 控えめなサイズに変更 */
+  height: auto;
+  opacity: 0.8; /* 少し透過させると背景に馴染んで上品になります */
+}
+
+#footer .copyright { 
+  color: #fff; 
+  font-size: 11px; /* 少し小さくして繊細な印象に */
+  letter-spacing: 0.05em;
+}
+
+/* スマホ・タブレットでの調整 */
+@media screen and (max-width: 767px) {
+  #footer .inner {
+    flex-direction: column; /* 縦並びにする */
+    gap: 20px;
+  }
+  #footer .logo img {
+    width: 60px; /* スマホではさらに一回り小さく */
+  }
+}
