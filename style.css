@@ -386,3 +386,32 @@ body {
   background-color: #fdf8f8;
   color: #333;
 
+/* style.css の .new-type 部分を修正 */
+.new-type { 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start; /* 左寄せに変更 */
+}
+
+/* そのままだとテキストと画像がくっつきすぎるので、画像に左余白を作る */
+.new-type .img { 
+  width: 30%; 
+  margin-left: 5%; /* テキストと画像の間に5%の隙間を作る */
+}
+
+/* Skillsセクションのボタンにホバー効果を追加 */
+.tool-tags li {
+  font-size: 12px;
+  padding: 6px 16px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  transition: all 0.3s; /* 変化を滑らかに */
+  cursor: default; /* クリック用でない場合はこれ、リンクならpointerに */
+}
+
+/* マウスを重ねた時の色の変化 */
+.tool-tags li:hover {
+  background-color: #333; /* 背景を黒に */
+  color: #fdf8f8;        /* 文字をメイン背景色のベージュに */
+}
+
