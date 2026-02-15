@@ -86,3 +86,54 @@ Skills (ここを元のデザインに固定)
   background-color: #333;
   color: #fdf8f8;
 }
+
+/* --- ナビゲーションの復元 --- */
+.nav-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- コンタクトフォームのスタイル --- */
+.contact-form {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.form-item {
+  margin-bottom: 30px;
+}
+.form-item label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.form-item input,
+.form-item textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333;
+  background-color: #fff;
+  font-family: inherit;
+}
+.form-item textarea {
+  height: 150px;
+}
+.submit-btn {
+  display: block;
+  width: 200px;
+  margin: 40px auto;
+  padding: 15px 0;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  letter-spacing: 0.1em;
+}
+.submit-btn:hover {
+  opacity: 0.8;
+}
