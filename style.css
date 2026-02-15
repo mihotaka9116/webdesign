@@ -184,3 +184,70 @@ Smartphone (iPhone SE対応)
   image-rendering: -webkit-optimize-contrast; /* 輪郭をクッキリさせる */
 }
 
+/* --- ハンバーガーメニューのスタイル --- */
+.hamburger {
+  display: none; /* PCでは隠す */
+  position: relative;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.4s;
+}
+
+/* 3本線の位置指定 */
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 11px; }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+/* メニューが開いた時の「×」アニメーション */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(11px) rotate(-45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-11px) rotate(45deg);
+}
+
+/* --- スマホ時のレイアウト調整 --- */
+@media screen and (max-width: 767px) {
+  .hamburger {
+    display: block; /* スマホで表示 */
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* 最初は画面の外に隠す */
+    width: 80%; /* 画面の8割を覆う */
+    height: 100vh;
+    background-color: rgba(253, 248, 248, 0.98);
+    transition: all 0.5s;
+    z-index: 1500;
+    padding-top: 100px;
+  }
+
+  .nav.active {
+    right: 0; /* 画面内にスライドイン */
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px !important;
+  }
+  
+  .nav-list li a {
+    font-size: 18px !important;
+  }
+}
