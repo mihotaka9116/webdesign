@@ -357,4 +357,32 @@ Skills
   opacity: 0.6;
 }
 
+#header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  /* height: 80px; を削除（中身に合わせて広がるように） */
+  padding: 20px 0; /* 上下の余白 */
+  background-color: rgba(253, 248, 248, 0.95);
+  display: flex;
+  flex-direction: column; /* 縦並びにする */
+  align-items: center;    /* 中央寄せ */
+  gap: 15px;              /* ロゴとメニューの間隔 */
+  z-index: 1000;
+}
+
+#header .logo {
+  margin: 0 auto;
+}
+
+#header .logo img {
+  width: 110px; /* 少し大きめにしても綺麗です */
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center; /* メニューも中央寄せ */
+}
+
 
