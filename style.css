@@ -200,3 +200,56 @@ Skills (ここを元のデザインに固定)
     width: 100%; /* スマホではボタンを横幅いっぱいにすると押しやすい */
   }
 }
+
+/* --- ナビゲーションを確実に右に寄せる (PC) --- */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px; /* 画面端からの余白 */
+}
+
+.nav {
+  position: fixed; /* 固定にする場合 */
+  top: 30px;
+  right: 30px;     /* ★これで確実に右に寄ります */
+  z-index: 100;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+/* --- コンタクトフォームを中央に寄せる --- */
+.contact-form {
+  max-width: 600px; /* フォームの最大幅 */
+  margin: 0 auto 100px; /* 左右をautoにすることで中央配置 */
+  padding: 0 20px;
+}
+
+.form-item {
+  margin-bottom: 30px;
+  text-align: left; /* ラベルなどは左揃え */
+}
+
+.form-item input,
+.form-item textarea {
+  width: 100%; /* 親の600pxに対して100%広がる */
+  border: 1px solid #333;
+  padding: 12px;
+  background-color: #fff;
+}
+
+/* --- スマホ時の修正 --- */
+@media screen and (max-width: 767px) {
+  .nav {
+    top: 25px;
+    right: 20px;
+  }
+  /* スマホ用ハンバーガーメニューを使っている場合はその設定を優先 */
+  
+  .contact-form {
+    margin-bottom: 60px;
+  }
+}
