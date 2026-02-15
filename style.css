@@ -243,3 +243,11 @@ Smartphone (Media Queries)
   height: 400px; /* 高さを少し低くする */
   object-fit: cover;
 }
+
+/* @media screen and (max-width: 767px) の中に追記 */
+@media screen and (max-width: 767px) {
+  .new-type .img {
+    width: 80%; /* 100%から80%に下げる */
+    margin: 0 auto; /* 中央に寄せる */
+  }
+}
