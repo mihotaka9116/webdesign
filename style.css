@@ -1,342 +1,88 @@
 @charset "UTF-8";
 
 /*-------------------------------------------
-Base & Typography (日本語の微調整)
+Base & Typography
 -------------------------------------------*/
-html {
-  font-size: 100%;
-  scroll-behavior: smooth;
-}
+html { font-size: 100%; scroll-behavior: smooth; }
 body {
   background-color: #fdf8f8;
   color: #333;
-  /* フォント最適化 */
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "palt"; /* 文字詰め */
+  font-feature-settings: "palt";
   line-height: 1.8;
   letter-spacing: 0.05em;
 }
-img {
-  max-width: 100%;
-  vertical-align: bottom;
-}
-li {
-  list-style: none;
-}
-a {
-  color: #333;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-a:hover {
-  opacity: 0.7;
-}
+img { max-width: 100%; vertical-align: bottom; }
+li { list-style: none; }
+a { color: #333; text-decoration: none; transition: opacity 0.3s; }
+a:hover { opacity: 0.7; }
 
-.wrapper {
-  max-width: 1040px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
-/* アンカーリンクのズレ防止 */
-#service, #portfolio, #contact {
-  scroll-margin-top: 100px; 
-}
+.wrapper { max-width: 1040px; padding: 0 20px; margin: 0 auto; }
 
 /*-------------------------------------------
-Header (Logo color: #666)
+Header & Footer (Logo colors adjusted)
 -------------------------------------------*/
-#header .logo {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 200;
-  line-height: 0;
-}
+#header .logo { position: fixed; top: 20px; left: 20px; z-index: 200; line-height: 0; }
 #header .logo img {
   width: 90px;
-  /* 真っ黒を #666 (グレー) に変換 */
   filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(95%) contrast(87%);
-  transition: 0.3s;
 }
-#header .logo a:hover img {
-  opacity: 0.6;
-}
-
-.nav {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  z-index: 100;
-}
-.nav-list {
-  display: flex;
-  gap: 30px;
-}
-.nav-list li a {
-  font-family: 'YuMincho', serif;
-  font-size: 14px;
-  letter-spacing: 0.15em;
-}
-
-.hamburger {
-  display: none;
-}
-
-/*-------------------------------------------
-Main Sections
--------------------------------------------*/
-.concept, .new-type {
-  padding: 100px 0;
-}
-
-.section-title {
-  font-family: 'YuMincho', serif;
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  letter-spacing: 0.15em; /* 明朝体の字間を広げる */
-}
-
-.description {
-  font-size: 15px;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-/* --- Web Design (画像を左へ寄せる調整) --- */
-.new-type { 
-  display: flex; 
-  align-items: center; 
-  justify-content: flex-start; /* 左寄せに変更 */
-}
-.new-type .text { 
-  width: 55%; 
-}
-.new-type .text .text-inner { 
-  max-width: 520px; 
-  padding: 0 40px; 
-}
-.new-type .img { 
-  width: 30%; 
-  margin-left: 2%; /* 画像をテキストに近づけて左へ寄せる */
-}
-.new-type .img img { 
-  height: auto;
-  max-height: 400px;
-  width: 100%;
-  object-fit: contain; 
-}
-
-/* --- Graphic Design (concept) --- */
-.concept { position: relative; }
-.concept .img { max-width: 60%; }
-.concept .text {
-  max-width: 500px;
-  background-color: rgba(253, 248, 248, 0.9);
-  padding: 40px;
-  position: absolute;
-  top: 150px;
-  right: 0;
-}
-
-/*-------------------------------------------
-Skills & Hover Buttons
--------------------------------------------*/
-.service-details { padding: 60px 20px; }
-.service-block { margin-bottom: 60px; border-bottom: 1px solid #e0e0e0; padding-bottom: 40px; }
-.service-block .section-title { font-size: 26px; }
-
-.tool-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
-.tool-tags li {
-  font-size: 12px;
-  padding: 8px 18px;
-  border: 1px solid #333;
-  border-radius: 20px;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-/* 角丸ボタンのホバー：背景を塗りつぶす */
-.tool-tags li:hover {
-  background-color: #333;
-  color: #fdf8f8;
-}
-
-/*-------------------------------------------
-Portfolio Grid
--------------------------------------------*/
-.portfolio-lead { text-align: center; margin: 80px auto; }
-.portfolio-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  max-width: 800px;
-  margin: 40px auto 0;
-}
-.btn-box { display: flex; flex-direction: column; align-items: center; }
-.btn-label { font-size: 11px; color: #aaa; margin-bottom: 10px; }
-.view-more-btn {
-  display: block;
-  width: 100%;
-  padding: 18px 0;
-  border: 1px solid #333;
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  text-align: center;
-}
-.view-more-btn:hover { background-color: #333; color: #fff; opacity: 1; }
-
-/*-------------------------------------------
-Contact & Footer (Logo color: #fdf8f8)
--------------------------------------------*/
-.online-store {
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url(img/bg.jpg) center/cover; /* パスは適宜修正 */
-}
-.online-store .box { width: 100%; max-width: 500px; background: rgba(0, 0, 0, 0.6); padding: 50px 0; text-align: center; }
-.online-store .box .title { color: #fff; font-size: 28px; margin-bottom: 25px; }
-.online-store .box .btn { background: #fff; display: inline-block; padding: 12px 40px; }
-
 #footer { background-color: #666; padding: 40px 0; }
 #footer .inner { display: flex; align-items: center; justify-content: space-between; }
 #footer .logo img {
   width: 70px;
-  /* メイン背景色(#fdf8f8)に変換 */
   filter: brightness(0) invert(98%) sepia(5%) saturate(100%) hue-rotate(320deg) brightness(102%) contrast(97%);
   opacity: 0.9;
 }
 #footer .copyright { color: #fff; font-size: 11px; }
 
 /*-------------------------------------------
-Smartphone & Tablet
--------------------------------------------*/
-@media screen and (max-width: 1024px) {
-  .concept .img { max-width: 80%; }
-  .concept .text { position: static; padding: 40px 0; background: transparent; }
-}
-
-@media screen and (max-width: 767px) {
-  #header .logo img { max-width: 70px; }
-  .hamburger {
-    display: block; width: 30px; height: 20px; position: fixed; top: 25px; right: 20px; z-index: 300;
-  }
-  .hamburger span { width: 100%; height: 1px; background-color: #333; position: absolute; transition: 0.4s; }
-  .hamburger span:nth-child(1) { top: 0; }
-  .hamburger span:nth-child(2) { bottom: 0; }
-  .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
-  .hamburger.active span:nth-child(2) { transform: translateY(-9px) rotate(-45deg); }
-
-  .nav {
-    width: 100%; height: 100vh; background-color: rgba(253, 248, 248, 0.98);
-    top: 0; left: 0; display: flex; align-items: center; justify-content: center;
-    opacity: 0; visibility: hidden; transition: 0.5s; z-index: 250;
-  }
-  .nav.active { opacity: 1; visibility: visible; }
-  .nav-list { flex-direction: column; gap: 20px; }
-  .nav-list li a { font-size: 20px; }
-
-  .new-type { flex-direction: column; text-align: center; }
-  .new-type .text { width: 100%; margin-bottom: 30px; }
-  .new-type .img { width: 70%; margin: 0 auto; }
-
-  .portfolio-buttons { grid-template-columns: 1fr; }
-  #footer .inner { flex-direction: column; gap: 20px; }
-}
-
-/* --- Web Design (全体を右へ寄せる調整) --- */
-.new-type { 
-  display: flex; 
-  align-items: center; 
-  justify-content: flex-start; /* 左寄せのまま、余白でコントロール */
-  padding-left: 10%;           /* ★ここで全体を右に押し出す（数値はお好みで） */
-}
-
-.new-type .text { 
-  width: 50%; /* テキスト幅を少し絞ると、より右寄りに見えます */
-}
-
-.new-type .text .text-inner { 
-  max-width: 520px; 
-  padding: 0 40px; 
-  /* margin-left: auto; は削除して左揃えに統一 */
-}
-
-.new-type .img { 
-  width: 30%; 
-  margin-left: 3%; /* テキストと画像の間隔 */
-}
-
-/*-------------------------------------------
-Main Sections (Web Design & Graphic Design)
+Main Sections (中央寄せスタイル)
 -------------------------------------------*/
 .concept, .new-type {
   padding: 100px 0;
   display: flex;
   align-items: center;
-  justify-content: center; /* 左右中央に配置 */
-  gap: 80px;               /* テキストと画像の間隔を広く取ってゆとりを出す */
+  justify-content: center; /* 中央に集める */
+  gap: 80px;
 }
 
-/* Web Design セクション */
-.new-type .text {
-  width: auto;
-  max-width: 480px;        /* テキストが広がりすぎないように制限 */
-}
-.new-type .text .text-inner {
-  padding: 0;
-}
-.new-type .img {
-  width: 25%;              /* 画像を少しコンパクトにして中央に寄せる */
-}
-.new-type .img img {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-}
+.section-title { font-family: 'YuMincho', serif; font-size: 30px; font-weight: 500; margin-bottom: 20px; letter-spacing: 0.15em; }
+.description { font-size: 15px; text-align: justify; }
 
-/* Graphic Design セクション（位置を中央寄せに修正） */
-.concept {
-  position: static;        /* absoluteを解除してflexの中央寄せを活かす */
-}
-.concept .img {
-  max-width: 30%;          /* Web Designの画像サイズとバランスを合わせる */
-  order: 2;                /* 画像を右側に配置 */
-}
-.concept .text {
-  position: static;        /* absoluteを解除 */
-  max-width: 480px;
-  background-color: transparent; /* 背景の重なりを解除 */
-  padding: 0;
-  order: 1;                /* テキストを左側に配置 */
-}
+/* Web Design */
+.new-type .text { width: auto; max-width: 480px; }
+.new-type .img { width: 25%; }
+.new-type .img img { width: 100%; height: auto; max-height: 400px; object-fit: contain; }
 
-/* --- スマホ・タブレット（中央寄せの解除） --- */
-@media screen and (max-width: 1024px) {
-  .concept, .new-type {
-    gap: 40px;             /* タブレットでは間隔を狭める */
-  }
-}
+/* Graphic Design */
+.concept .img { width: 25%; order: 2; } /* 画像を右へ */
+.concept .text { width: auto; max-width: 480px; order: 1; } /* テキストを左へ */
 
-@media screen and (max-width: 767px) {
-  .concept, .new-type {
-    flex-direction: column; /* 縦並びに */
-    text-align: center;
-    padding: 60px 20px;
-    gap: 30px;
-  }
-  .concept .img, .new-type .img {
-    width: 70%;
-    order: 1;              /* スマホでは画像を上にする */
-  }
-  .concept .text, .new-type .text {
-    order: 2;
-  }
+/*-------------------------------------------
+Skills (ここを元のデザインに固定)
+-------------------------------------------*/
+.service-details { padding: 80px 20px; }
+.service-block { 
+  margin-bottom: 80px; 
+  border-bottom: 1px solid #e0e0e0; 
+  padding-bottom: 60px; 
+}
+.service-block:last-child { border-bottom: none; }
+.service-block .section-title { font-size: 28px; }
+
+.tool-tags { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
+.tool-tags li {
+  font-size: 13px;
+  padding: 8px 20px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+.tool-tags li:hover {
+  background-color: #333;
+  color: #fdf8f8;
 }
