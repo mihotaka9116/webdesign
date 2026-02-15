@@ -105,12 +105,28 @@ Main Sections
   text-align: justify;
 }
 
-.new-type { display: flex; align-items: center; }
-.new-type .text { width: 50%; }
-.new-type .text .text-inner { max-width: 520px; padding: 0 60px 0 20px; margin-left: auto; }
-.new-type .img { width: 50%; }
-.new-type .img img { height: 480px; object-fit: cover; }
-
+/* --- 画像サイズ調整のポイント --- */
+.new-type { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; /* 両端に寄せる */
+}
+.new-type .text { 
+  width: 65%; /* テキストエリアを広く */
+}
+.new-type .text .text-inner { 
+  max-width: 520px; 
+  padding: 0 40px; 
+  margin-left: auto; 
+}
+.new-type .img { 
+  width: 30%; /* 画像をコンパクトに(40%から30%へ) */
+}
+.new-type .img img { 
+  height: 350px; /* 高さも400pxから350pxへ低く */
+  width: 100%;
+  object-fit: cover; 
+}
 /*-------------------------------------------
 Skills (Service Details)
 -------------------------------------------*/
