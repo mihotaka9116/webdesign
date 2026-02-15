@@ -137,3 +137,66 @@ Skills (ここを元のデザインに固定)
 .submit-btn:hover {
   opacity: 0.8;
 }
+
+@media screen and (max-width: 767px) {
+  /* --- ナビゲーションを右上に固定 --- */
+  .nav {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* 右寄せ */
+    left: auto;  /* 左の指定を解除 */
+    width: auto;
+    height: auto;
+    z-index: 250;
+  }
+  
+  /* ハンバーガーメニューがアクティブな時だけ全画面にする設定などは維持 */
+  .nav.active {
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    top: 0;
+  }
+
+  /* --- スマホで画像を大きく見せる --- */
+  .concept, .new-type {
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .concept .img, .new-type .img {
+    width: 100% !important; /* 幅をいっぱいにして画像を大きく */
+    max-width: 100%;
+    margin: 0 auto 20px;   /* 中央寄せ */
+  }
+
+  .concept .img img, .new-type .img img {
+    width: 100%;
+    height: auto;
+    max-height: none; /* 高さ制限を解除 */
+  }
+
+  /* --- コンタクトフォームを中央に寄せる --- */
+  .contact-form {
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 子要素を中央へ */
+  }
+
+  .contact-form form {
+    width: 100%;
+  }
+
+  .form-item {
+    text-align: left; /* 入力項目のラベルは左揃えが読みやすい */
+  }
+
+  .submit-btn {
+    width: 100%; /* スマホではボタンを横幅いっぱいにすると押しやすい */
+  }
+}
