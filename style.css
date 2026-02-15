@@ -14,7 +14,7 @@ body {
   line-height: 1.8;
   letter-spacing: 0.05em;
 }
-img { max-width: 100%; vertical-align: bottom; }
+img { max-width: 100%; height: auto; vertical-align: bottom; }
 li { list-style: none; }
 a { color: #333; text-decoration: none; transition: opacity 0.3s; }
 a:hover { opacity: 0.7; }
@@ -22,18 +22,19 @@ a:hover { opacity: 0.7; }
 .wrapper { max-width: 1040px; padding: 0 20px; margin: 0 auto; }
 
 /*-------------------------------------------
-Header & Navigation (PC & Smartphone)
+Header (ロゴとナビの固定)
 -------------------------------------------*/
 #header {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
+  height: 80px;
+  background-color: rgba(253, 248, 248, 0.95);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
-  z-index: 200;
+  padding: 0 30px;
+  z-index: 1000;
 }
 
 #header .logo img {
@@ -41,289 +42,84 @@ Header & Navigation (PC & Smartphone)
   filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(95%) contrast(87%);
 }
 
-.nav-list {
-  display: flex;
-  gap: 30px;
-}
+.nav-list { display: flex; gap: 30px; }
 .nav-list li a { font-family: 'YuMincho', serif; font-size: 14px; letter-spacing: 0.15em; }
 
-@media screen and (max-width: 767px) {
-  #header { padding: 15px 20px; }
-  #header .logo img { width: 70px; }
-  .nav-list { gap: 15px; }
-  .nav-list li a { font-size: 12px; }
-}
-
 /*-------------------------------------------
-Main Sections (Concept & New-type)
+Main Layout (Web/Graphic Design)
 -------------------------------------------*/
+main { padding-top: 100px; } /* ヘッダーに被らないように */
+
 .concept, .new-type {
-  padding: 100px 0;
+  padding: 80px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 60px;
 }
 
-.section-title { font-family: 'YuMincho', serif; font-size: 30px; font-weight: 500; margin-bottom: 20px; letter-spacing: 0.15em; }
+.section-title { font-family: 'YuMincho', serif; font-size: 28px; margin-bottom: 20px; letter-spacing: 0.15em; }
 .description { font-size: 15px; text-align: justify; }
 
-.new-type .text, .concept .text { width: auto; max-width: 480px; }
+.new-type .text, .concept .text { width: auto; max-width: 450px; }
 .new-type .img, .concept .img { width: 25%; }
 .concept .img { order: 2; }
 .concept .text { order: 1; }
 
-@media screen and (max-width: 767px) {
-  .concept, .new-type { flex-direction: column; text-align: center; gap: 30px; padding: 60px 20px; }
-  .concept .img, .new-type .img { width: 100% !important; order: 1; }
-  .concept .text, .new-type .text { order: 2; max-width: 100%; }
-}
-
 /*-------------------------------------------
-Skills (Service Details)
+Skills
 -------------------------------------------*/
-.service-details { padding: 80px 20px; }
-.service-block { margin-bottom: 80px; border-bottom: 1px solid #e0e0e0; padding-bottom: 60px; }
-.service-block:last-child { border-bottom: none; }
-
-.tool-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
-.tool-tags li {
-  font-size: 12px; padding: 8px 18px; border: 1px solid #333; border-radius: 20px;
-  transition: all 0.3s;
-}
-.tool-tags li:hover { background-color: #333; color: #fdf8f8; }
+.service-details { padding: 60px 20px; }
+.service-block { margin-bottom: 60px; border-bottom: 1px solid #e0e0e0; padding-bottom: 40px; }
+.tool-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.tool-tags li { font-size: 12px; padding: 6px 15px; border: 1px solid #333; border-radius: 20px; }
 
 /*-------------------------------------------
-Contact Form (★ここを完全に独立させました)
+Contact Form (★中央寄せの徹底)
 -------------------------------------------*/
 .contact-form {
-  display: block !important; /* 横並びを徹底排除 */
   max-width: 600px;
-  margin: 0 auto 100px;
+  margin: 60px auto 120px;
   padding: 0 20px;
 }
 
-.form-item { margin-bottom: 30px; text-align: left; }
-.form-item label { display: block; font-size: 14px; margin-bottom: 10px; font-weight: bold; }
+.form-item { margin-bottom: 25px; text-align: left; }
+.form-item label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 8px; }
 .form-item input, .form-item textarea {
   width: 100%; padding: 12px; border: 1px solid #333; background-color: #fff;
-  box-sizing: border-box; /* 枠線を含めた100%幅 */
+  box-sizing: border-box; font-family: inherit;
 }
-.form-item textarea { height: 150px; }
+
+/* メッセージ欄：クリックで開く */
+.expand-textarea {
+  height: 50px;
+  transition: height 0.4s ease;
+  resize: none;
+}
+.expand-textarea:focus {
+  height: 200px;
+  outline: none;
+}
 
 .submit-btn {
-  display: block; width: 200px; margin: 40px auto; padding: 15px 0;
-  background-color: #333; color: #fff; border: none; cursor: pointer; transition: 0.3s;
-}
-.submit-btn:hover { opacity: 0.8; }
-
-@media screen and (max-width: 767px) {
-  .contact-form { margin-bottom: 60px; }
-  .submit-btn { width: 100%; }
+  display: block; width: 220px; margin: 40px auto; padding: 16px 0;
+  background-color: #333; color: #fff; border: none; cursor: pointer;
 }
 
 /*-------------------------------------------
-Footer
+Smartphone (iPhone SE対応)
 -------------------------------------------*/
-#footer { background-color: #666; padding: 40px 0; margin-top: 50px; }
-#footer .inner { display: flex; align-items: center; justify-content: space-between; }
-#footer .logo img {
-  width: 70px;
-  filter: brightness(0) invert(98%) sepia(5%) saturate(100%) hue-rotate(320deg) brightness(102%) contrast(97%);
-  opacity: 0.9;
-}
-#footer .copyright { color: #fff; font-size: 11px; }
-
 @media screen and (max-width: 767px) {
-  #footer .inner { flex-direction: column; gap: 20px; }
+  #header { padding: 0 20px; height: 60px; }
+  #header .logo img { width: 100px !important; min-width: 100px; } /* 米粒防止 */
+  .nav-list { gap: 15px; }
+  .nav-list li a { font-size: 11px; }
+
+  .concept, .new-type { flex-direction: column; text-align: center; gap: 30px; }
+  .concept .img, .new-type .img { width: 80%; order: 1; }
+  .concept .text, .new-type .text { order: 2; width: 100%; }
+
+  .contact-form { margin-top: 30px; }
+  .submit-btn { width: 100%; }
 }
 
-@media screen and (max-width: 767px) {
-  /* --- ロゴのサイズをiPhone SEでも適切にする --- */
-  #header .logo img {
-    width: 100px !important; /* 米粒にならないようサイズを固定 */
-    max-width: 120px;
-    height: auto;
-  }
-
-  /* --- ナビゲーションの間隔を調整 --- */
-  .nav-list {
-    gap: 12px; /* 狭い画面でも入り切るように少し詰める */
-  }
-
-  /* --- コンタクトフォームを確実にど真ん中に --- */
-  .contact-form {
-    display: block !important;
-    width: 90% !important;   /* 画面幅の90%を使って余裕を持たせる */
-    max-width: 400px;       /* スマホでの広がりすぎ防止 */
-    margin: 40px auto !important; /* 左右autoで強制中央寄せ */
-    padding: 0 !important;   /* 余計な内側余白をリセット */
-  }
-
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    /* 中の要素を中央に */
-    width: 100%;
-  }
-
-  .form-item {
-    width: 100% !important;
-    text-align: left;       /* ラベルは左揃えが見やすい */
-  }
-
-  /* 入力欄の横幅を100%に固定 */
-  .form-item input,
-  .form-item textarea {
-    width: 100% !important;
-    max-width: 100%;
-    box-sizing: border-box; /* 枠線がはみ出さないように */
-  }
-}
-
-/* --- iPhone SE & スマホ特化修正 --- */
-@media screen and (max-width: 480px) {
-  /* ロゴが米粒になるのを防ぐ */
-  #header .logo img {
-    width: 110px !important; /* SEでもはっきり見えるサイズ */
-    height: auto !important;
-    min-width: 100px;
-  }
-
-  /* ナビがロゴに被らないよう調整 */
-  .nav-list {
-    gap: 10px !important;
-  }
-  .nav-list li a {
-    font-size: 11px !important;
-  }
-
-  /* コンタクトフォームを強制中央寄せ */
-  main {
-    display: block !important; /* 親要素の横並びを完全に解除 */
-  }
-
-  .contact-form {
-    display: block !important;
-    width: 90% !important;     /* 画面幅の90%を使用 */
-    max-width: 320px !important; /* iPhone SEの幅に最適化 */
-    margin: 40px auto !important; /* 左右autoでど真ん中へ */
-    padding: 0 !important;
-  }
-
-  .contact-form form {
-    width: 100% !important;
-  }
-
-  /* 入力欄の幅を画面に合わせる */
-  .form-item input, 
-  .form-item textarea {
-    width: 100% !important;
-    box-sizing: border-box; /* 枠線がはみ出さない魔法の命令 */
-  }
-}
-
-/* --- iPhone SE / スマホ ロゴ修正 --- */
-@media screen and (max-width: 480px) {
-  #header .logo img {
-    width: 100px !important; /* 米粒回避 */
-    min-width: 100px !important;
-  }
-  #header {
-    padding: 15px !important;
-  }
-  .nav-list {
-    gap: 10px !important;
-  }
-}
-
-/* --- コンタクトフォーム中央寄せ（どんな環境でも） --- */
-.contact-form {
-  display: block !important;
-  width: 100% !important;
-  max-width: 600px !important;
-  margin: 0 auto !important; /* 左右を自動で均等にする */
-  padding: 0 20px 100px !important;
-  box-sizing: border-box;
-}
-
-.contact-form form {
-  display: block !important;
-}
-
-.form-item input, 
-.form-item textarea {
-  box-sizing: border-box !important; /* 枠線が外に飛び出さないようにする */
-}
-
-/* ===========================================
-   iPhone SE & スマホ 最終修正（最優先）
-   =========================================== */
-@media screen and (max-width: 480px) {
-  /* 1. ロゴを絶対に見えるサイズに固定 */
-  #header .logo img {
-    width: 110px !important;
-    height: auto !important;
-    min-width: 100px !important;
-  }
-
-  /* 2. ヘッダーのレイアウトを強制固定 */
-  #header {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 15px 20px !important;
-    position: fixed !important;
-    background-color: #fdf8f8 !important; /* 背景色をつけて文字を読みやすく */
-  }
-
-  /* 3. ナビゲーションを右端に配置 */
-  .nav {
-    position: static !important;
-    margin-left: auto !important;
-  }
-  .nav-list {
-    display: flex !important;
-    gap: 12px !important;
-  }
-  .nav-list li a {
-    font-size: 11px !important;
-  }
-
-  /* 4. コンタクトフォームを確実に中央へ */
-  main {
-    display: block !important;
-    padding-top: 100px !important; /* ヘッダーの下から開始 */
-  }
-
-  .contact-form {
-    display: block !important;
-    width: 90% !important;
-    max-width: 340px !important;
-    margin: 40px auto !important; /* 左右autoで中央 */
-    padding: 0 !important;
-  }
-
-  .contact-form form {
-    width: 100% !important;
-  }
-}
-
-/* ===========================================
-   メッセージ欄がクリックで開く（広がる）設定
-   =========================================== */
-.expand-textarea {
-  width: 100%;
-  height: 50px; /* 最初は1行分くらいの高さ */
-  padding: 12px;
-  border: 1px solid #333;
-  transition: height 0.4s ease; /* じわっと広がるアニメーション */
-  resize: none; /* 右下のツマミを消す */
-}
-
-/* クリック（フォーカス）した時に高さが広がる */
-.expand-textarea:focus {
-  height: 200px; /* 広がった後の高さ */
-  outline: none;
-  border-color: #888;
-}
