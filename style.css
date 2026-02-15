@@ -230,3 +230,69 @@ Smartphone (Media Queries)
 
   .portfolio-buttons { grid-template-columns: 1fr; }
 }
+
+/*-------------------------------------------
+Header & Navigation (PC & Tablet)
+-------------------------------------------*/
+#header .logo {
+  width: 100%;
+  max-width: 90px; /* 120pxから90pxに縮小 */
+  line-height: 0;
+  position: fixed;
+  top: 20px; /* 少し上に詰める */
+  left: 20px;
+  z-index: 200;
+  transition: max-width 0.3s; /* サイズ変化を滑らかに */
+}
+
+/*-------------------------------------------
+Main Sections (画像の見切れ対策)
+-------------------------------------------*/
+.new-type .img img { 
+  height: auto; /* 固定の高さを解除して自動調整に */
+  max-height: 400px; /* 大きくなりすぎない上限だけ設定 */
+  width: 100%;
+  object-fit: contain; /* 画像全体が見えるように収める */
+}
+
+/* グラフィックデザイン(concept)部分の画像対策 */
+.concept .img {
+  max-width: 70%; /* タブレットで横幅を少し抑える */
+}
+.concept .img img {
+  height: auto;
+  object-fit: contain;
+}
+
+/*-------------------------------------------
+Smartphone & Tablet (Media Queries)
+-------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  /* タブレットサイズでの調整 */
+  .new-type {
+    padding: 80px 20px;
+  }
+  .new-type .text {
+    width: 60%;
+  }
+  .new-type .img {
+    width: 35%;
+  }
+  
+  /* グラフィック部分の重なりを解消 */
+  .concept .text {
+    position: static;
+    max-width: 100%;
+    padding: 30px 0;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #header .logo {
+    max-width: 70px; /* スマホではさらに小さく */
+    top: 15px;
+    left: 15px;
+  }
+  /* ...（その他のスマホ設定はそのまま）... */
+}
