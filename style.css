@@ -459,7 +459,9 @@ main {
 main {
   padding-top: 220px; /* ロゴ＋メニュー＋余白の分だけコンテンツを下げる */
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 
 
