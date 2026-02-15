@@ -360,3 +360,25 @@ Contact & Footer
   filter: brightness(0) invert(0.98);
   opacity: 0.9; /* ほんの少しだけ透けさせる */
 }
+
+/* --- ヘッダーロゴの修正 --- */
+#header .logo img {
+  width: 100%;
+  max-width: 90px;
+  /* フィルターで真っ黒を #666 (グレー) に変換する魔法の数値 */
+  filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(95%) contrast(87%);
+  transition: 0.3s;
+}
+
+#header .logo a:hover img {
+  opacity: 0.6; /* ホバー時に少し薄くする */
+}
+
+/* --- フッターロゴの修正 --- */
+#footer .logo img {
+  width: 70px;
+  height: auto;
+  /* フィルターで色を反転させ、メイン背景色(#fdf8f8)に近い明るいベージュ白にする */
+  filter: brightness(0) invert(98%) sepia(5%) saturate(100%) hue-rotate(320deg) brightness(102%) contrast(97%);
+  opacity: 0.9;
+}
