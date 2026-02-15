@@ -168,3 +168,19 @@ Smartphone (iPhone SE対応)
   }
 }
 
+/* 送信ボタンに動きをつける */
+.submit-btn {
+  transition: all 0.3s ease;
+  border: 1px solid #333; /* 枠線を追加 */
+}
+
+.submit-btn:hover {
+  background-color: #fff !important;
+  color: #333 !important;
+  opacity: 1 !important;
+}
+
+#header .logo img {
+  image-rendering: -webkit-optimize-contrast; /* 輪郭をクッキリさせる */
+}
+
