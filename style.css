@@ -180,3 +180,45 @@ Footer
     box-sizing: border-box; /* 枠線がはみ出さないように */
   }
 }
+
+/* --- iPhone SE & スマホ特化修正 --- */
+@media screen and (max-width: 480px) {
+  /* ロゴが米粒になるのを防ぐ */
+  #header .logo img {
+    width: 110px !important; /* SEでもはっきり見えるサイズ */
+    height: auto !important;
+    min-width: 100px;
+  }
+
+  /* ナビがロゴに被らないよう調整 */
+  .nav-list {
+    gap: 10px !important;
+  }
+  .nav-list li a {
+    font-size: 11px !important;
+  }
+
+  /* コンタクトフォームを強制中央寄せ */
+  main {
+    display: block !important; /* 親要素の横並びを完全に解除 */
+  }
+
+  .contact-form {
+    display: block !important;
+    width: 90% !important;     /* 画面幅の90%を使用 */
+    max-width: 320px !important; /* iPhone SEの幅に最適化 */
+    margin: 40px auto !important; /* 左右autoでど真ん中へ */
+    padding: 0 !important;
+  }
+
+  .contact-form form {
+    width: 100% !important;
+  }
+
+  /* 入力欄の幅を画面に合わせる */
+  .form-item input, 
+  .form-item textarea {
+    width: 100% !important;
+    box-sizing: border-box; /* 枠線がはみ出さない魔法の命令 */
+  }
+}
