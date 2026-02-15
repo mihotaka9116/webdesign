@@ -137,3 +137,46 @@ Footer
 @media screen and (max-width: 767px) {
   #footer .inner { flex-direction: column; gap: 20px; }
 }
+
+@media screen and (max-width: 767px) {
+  /* --- ロゴのサイズをiPhone SEでも適切にする --- */
+  #header .logo img {
+    width: 100px !important; /* 米粒にならないようサイズを固定 */
+    max-width: 120px;
+    height: auto;
+  }
+
+  /* --- ナビゲーションの間隔を調整 --- */
+  .nav-list {
+    gap: 12px; /* 狭い画面でも入り切るように少し詰める */
+  }
+
+  /* --- コンタクトフォームを確実にど真ん中に --- */
+  .contact-form {
+    display: block !important;
+    width: 90% !important;   /* 画面幅の90%を使って余裕を持たせる */
+    max-width: 400px;       /* スマホでの広がりすぎ防止 */
+    margin: 40px auto !important; /* 左右autoで強制中央寄せ */
+    padding: 0 !important;   /* 余計な内側余白をリセット */
+  }
+
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* 中の要素を中央に */
+    width: 100%;
+  }
+
+  .form-item {
+    width: 100% !important;
+    text-align: left;       /* ラベルは左揃えが見やすい */
+  }
+
+  /* 入力欄の横幅を100%に固定 */
+  .form-item input,
+  .form-item textarea {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box; /* 枠線がはみ出さないように */
+  }
+}
