@@ -273,31 +273,70 @@ Smartphone & Tablet
   margin-left: 3%; /* テキストと画像の間隔 */
 }
 
-/* --- Web Design (全体を中央にギュッと集める) --- */
-.new-type { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; /* ★左右中央に配置 */
-  gap: 60px;               /* ★テキストと画像の間隔を固定（お好みで調整） */
-  padding: 100px 20px;     /* 左右の padding-left は解除 */
+/*-------------------------------------------
+Main Sections (Web Design & Graphic Design)
+-------------------------------------------*/
+.concept, .new-type {
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 左右中央に配置 */
+  gap: 80px;               /* テキストと画像の間隔を広く取ってゆとりを出す */
 }
 
-.new-type .text { 
-  width: auto;             /* 幅を自動にして中身に合わせる */
-  max-width: 500px;        /* 広がりすぎないように制限 */
+/* Web Design セクション */
+.new-type .text {
+  width: auto;
+  max-width: 480px;        /* テキストが広がりすぎないように制限 */
 }
-
-.new-type .text .text-inner { 
-  padding: 0;              /* 余計な余白をカット */
+.new-type .text .text-inner {
+  padding: 0;
 }
-
-.new-type .img { 
-  width: 25%;              /* 画像のサイズ */
-  margin-left: 0;          /* gapで調整するのでmarginは不要 */
+.new-type .img {
+  width: 25%;              /* 画像を少しコンパクトにして中央に寄せる */
 }
-
 .new-type .img img {
   width: 100%;
   height: auto;
+  max-height: 400px;
   object-fit: contain;
+}
+
+/* Graphic Design セクション（位置を中央寄せに修正） */
+.concept {
+  position: static;        /* absoluteを解除してflexの中央寄せを活かす */
+}
+.concept .img {
+  max-width: 30%;          /* Web Designの画像サイズとバランスを合わせる */
+  order: 2;                /* 画像を右側に配置 */
+}
+.concept .text {
+  position: static;        /* absoluteを解除 */
+  max-width: 480px;
+  background-color: transparent; /* 背景の重なりを解除 */
+  padding: 0;
+  order: 1;                /* テキストを左側に配置 */
+}
+
+/* --- スマホ・タブレット（中央寄せの解除） --- */
+@media screen and (max-width: 1024px) {
+  .concept, .new-type {
+    gap: 40px;             /* タブレットでは間隔を狭める */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .concept, .new-type {
+    flex-direction: column; /* 縦並びに */
+    text-align: center;
+    padding: 60px 20px;
+    gap: 30px;
+  }
+  .concept .img, .new-type .img {
+    width: 70%;
+    order: 1;              /* スマホでは画像を上にする */
+  }
+  .concept .text, .new-type .text {
+    order: 2;
+  }
 }
