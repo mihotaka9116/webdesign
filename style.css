@@ -222,3 +222,36 @@ Footer
     box-sizing: border-box; /* 枠線がはみ出さない魔法の命令 */
   }
 }
+
+/* --- iPhone SE / スマホ ロゴ修正 --- */
+@media screen and (max-width: 480px) {
+  #header .logo img {
+    width: 100px !important; /* 米粒回避 */
+    min-width: 100px !important;
+  }
+  #header {
+    padding: 15px !important;
+  }
+  .nav-list {
+    gap: 10px !important;
+  }
+}
+
+/* --- コンタクトフォーム中央寄せ（どんな環境でも） --- */
+.contact-form {
+  display: block !important;
+  width: 100% !important;
+  max-width: 600px !important;
+  margin: 0 auto !important; /* 左右を自動で均等にする */
+  padding: 0 20px 100px !important;
+  box-sizing: border-box;
+}
+
+.contact-form form {
+  display: block !important;
+}
+
+.form-item input, 
+.form-item textarea {
+  box-sizing: border-box !important; /* 枠線が外に飛び出さないようにする */
+}
