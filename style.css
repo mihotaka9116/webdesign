@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*-------------------------------------------
-Base
+Base & Typography (日本語の微調整)
 -------------------------------------------*/
 html {
   font-size: 100%;
@@ -10,7 +10,13 @@ html {
 body {
   background-color: #fdf8f8;
   color: #333;
-  font-family: 'YuGothic', 'Yu Gothic', sans-serif;
+  /* フォント最適化 */
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt"; /* 文字詰め */
+  line-height: 1.8;
+  letter-spacing: 0.05em;
 }
 img {
   max-width: 100%;
@@ -40,21 +46,28 @@ a:hover {
 }
 
 /*-------------------------------------------
-Header & Navigation (PC)
+Header (Logo color: #666)
 -------------------------------------------*/
 #header .logo {
-  width: 100%;
-  max-width: 120px;
-  line-height: 0;
   position: fixed;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 20px;
   z-index: 200;
+  line-height: 0;
+}
+#header .logo img {
+  width: 90px;
+  /* 真っ黒を #666 (グレー) に変換 */
+  filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(95%) contrast(87%);
+  transition: 0.3s;
+}
+#header .logo a:hover img {
+  opacity: 0.6;
 }
 
 .nav {
   position: fixed;
-  top: 40px;
+  top: 30px;
   right: 30px;
   z-index: 100;
 }
@@ -76,342 +89,163 @@ Header & Navigation (PC)
 Main Sections
 -------------------------------------------*/
 .concept, .new-type {
-  padding-top: 130px;
-  padding-bottom: 130px;
-}
-.concept { position: relative; }
-.concept .img { max-width: 720px; }
-.concept .text {
-  max-width: 600px;
-  background-color: rgba(253, 248, 248, 0.8);
-  padding: 40px;
-  position: absolute;
-  top: 325px;
-  right: 0;
+  padding: 100px 0;
 }
 
-.concept .text .section-title,
-.new-type .text .section-title {
+.section-title {
   font-family: 'YuMincho', serif;
   font-size: 30px;
-  font-weight: normal;
+  font-weight: 500;
   margin-bottom: 20px;
+  letter-spacing: 0.15em; /* 明朝体の字間を広げる */
 }
 
-.concept .text .description,
-.new-type .text .description {
+.description {
   font-size: 15px;
   line-height: 1.8;
   text-align: justify;
 }
 
-/* --- Miho Takahashiができること(Web Design)セクション --- */
+/* --- Web Design (画像を左へ寄せる調整) --- */
 .new-type { 
   display: flex; 
   align-items: center; 
-  justify-content: space-between;
+  justify-content: flex-start; /* 左寄せに変更 */
 }
 .new-type .text { 
-  width: 65%; /* テキストを広めに */
+  width: 55%; 
 }
 .new-type .text .text-inner { 
   max-width: 520px; 
   padding: 0 40px; 
-  margin-left: auto; 
 }
 .new-type .img { 
-  width: 30%; /* 画像を小さく(30%)に設定 */
+  width: 30%; 
+  margin-left: 2%; /* 画像をテキストに近づけて左へ寄せる */
 }
 .new-type .img img { 
-  height: 350px; /* 高さを抑えてコンパクトに */
+  height: auto;
+  max-height: 400px;
   width: 100%;
-  object-fit: cover; 
+  object-fit: contain; 
+}
+
+/* --- Graphic Design (concept) --- */
+.concept { position: relative; }
+.concept .img { max-width: 60%; }
+.concept .text {
+  max-width: 500px;
+  background-color: rgba(253, 248, 248, 0.9);
+  padding: 40px;
+  position: absolute;
+  top: 150px;
+  right: 0;
 }
 
 /*-------------------------------------------
-Skills (Service Details)
+Skills & Hover Buttons
 -------------------------------------------*/
-.service-details { padding: 80px 20px; }
-.service-block { margin-bottom: 80px; border-bottom: 1px solid #e0e0e0; padding-bottom: 60px; }
-.service-block:last-child { border-bottom: none; }
-.service-block .section-title { font-family: 'YuMincho', serif; font-size: 28px; margin-bottom: 20px; }
+.service-details { padding: 60px 20px; }
+.service-block { margin-bottom: 60px; border-bottom: 1px solid #e0e0e0; padding-bottom: 40px; }
+.service-block .section-title { font-size: 26px; }
 
-.tool-tags { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
+.tool-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
 .tool-tags li {
-  font-size: 13px;
-  padding: 8px 20px;
+  font-size: 12px;
+  padding: 8px 18px;
   border: 1px solid #333;
   border-radius: 20px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* 角丸ボタンのホバー：背景を塗りつぶす */
+.tool-tags li:hover {
+  background-color: #333;
+  color: #fdf8f8;
 }
 
 /*-------------------------------------------
 Portfolio Grid
 -------------------------------------------*/
-.portfolio-lead { text-align: center; margin-top: 100px; padding-bottom: 50px; }
+.portfolio-lead { text-align: center; margin: 80px auto; }
 .portfolio-buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px 30px;
+  gap: 30px;
   max-width: 800px;
   margin: 40px auto 0;
 }
 .btn-box { display: flex; flex-direction: column; align-items: center; }
 .btn-label { font-size: 11px; color: #aaa; margin-bottom: 10px; }
 .view-more-btn {
-  display: inline-block;
+  display: block;
   width: 100%;
   padding: 18px 0;
   border: 1px solid #333;
   font-size: 14px;
   letter-spacing: 0.2em;
+  text-align: center;
 }
 .view-more-btn:hover { background-color: #333; color: #fff; opacity: 1; }
 
 /*-------------------------------------------
-Contact & Footer
+Contact & Footer (Logo color: #fdf8f8)
 -------------------------------------------*/
 .online-store {
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../img/bg.jpg) center top / cover;
-  background-blend-mode: lighten;
-  background-color: rgba(255, 255, 255, 0.5);
+  background: url(img/bg.jpg) center/cover; /* パスは適宜修正 */
 }
-.online-store .box { width: 100%; max-width: 500px; background: rgba(0, 0, 0, 0.5); padding: 50px 0; text-align: center; }
+.online-store .box { width: 100%; max-width: 500px; background: rgba(0, 0, 0, 0.6); padding: 50px 0; text-align: center; }
 .online-store .box .title { color: #fff; font-size: 28px; margin-bottom: 25px; }
-.online-store .box .btn { background: #fff; display: inline-block; padding: 10px 30px; }
+.online-store .box .btn { background: #fff; display: inline-block; padding: 12px 40px; }
 
-#footer { background-color: #666; padding: 30px 0; }
+#footer { background-color: #666; padding: 40px 0; }
 #footer .inner { display: flex; align-items: center; justify-content: space-between; }
-#footer .copyright { color: #fff; font-size: 12px; }
+#footer .logo img {
+  width: 70px;
+  /* メイン背景色(#fdf8f8)に変換 */
+  filter: brightness(0) invert(98%) sepia(5%) saturate(100%) hue-rotate(320deg) brightness(102%) contrast(97%);
+  opacity: 0.9;
+}
+#footer .copyright { color: #fff; font-size: 11px; }
 
 /*-------------------------------------------
-Smartphone (Media Queries)
+Smartphone & Tablet
 -------------------------------------------*/
-@media screen and (max-width: 767px) {
-  #header .logo { max-width: 85px; top: 20px; left: 20px; }
+@media screen and (max-width: 1024px) {
+  .concept .img { max-width: 80%; }
+  .concept .text { position: static; padding: 40px 0; background: transparent; }
+}
 
+@media screen and (max-width: 767px) {
+  #header .logo img { max-width: 70px; }
   .hamburger {
-    display: block; width: 30px; height: 20px;
-    position: fixed; top: 25px; right: 20px; z-index: 300;
+    display: block; width: 30px; height: 20px; position: fixed; top: 25px; right: 20px; z-index: 300;
   }
-  .hamburger span {
-    width: 100%; height: 1px; background-color: #333;
-    position: absolute; transition: all 0.4s;
-  }
+  .hamburger span { width: 100%; height: 1px; background-color: #333; position: absolute; transition: 0.4s; }
   .hamburger span:nth-child(1) { top: 0; }
   .hamburger span:nth-child(2) { bottom: 0; }
   .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
   .hamburger.active span:nth-child(2) { transform: translateY(-9px) rotate(-45deg); }
 
   .nav {
-    width: 100%; height: 100vh;
-    background-color: rgba(253, 248, 248, 0.98);
+    width: 100%; height: 100vh; background-color: rgba(253, 248, 248, 0.98);
     top: 0; left: 0; display: flex; align-items: center; justify-content: center;
-    opacity: 0; visibility: hidden; transition: all 0.5s; z-index: 250;
+    opacity: 0; visibility: hidden; transition: 0.5s; z-index: 250;
   }
   .nav.active { opacity: 1; visibility: visible; }
-  .nav-list { flex-direction: column; text-align: center; gap: 0; }
-  .nav-list li { margin: 25px 0; }
-  .nav-list li a { font-size: 24px; }
+  .nav-list { flex-direction: column; gap: 20px; }
+  .nav-list li a { font-size: 20px; }
 
-  .concept { padding: 40px 0; position: static; }
-  .concept .text { position: static; padding: 0; background: transparent; }
-
-  .new-type { flex-direction: column; padding: 40px 20px; }
+  .new-type { flex-direction: column; text-align: center; }
   .new-type .text { width: 100%; margin-bottom: 30px; }
-  .new-type .text .text-inner { padding: 0; }
-  
-  /* スマホでの画像サイズを70%にして中央寄せ */
-  .new-type .img { width: 70%; margin: 0 auto; } 
-  .new-type .img img { height: auto; }
+  .new-type .img { width: 70%; margin: 0 auto; }
 
   .portfolio-buttons { grid-template-columns: 1fr; }
+  #footer .inner { flex-direction: column; gap: 20px; }
 }
-
-/*-------------------------------------------
-Header & Navigation (PC & Tablet)
--------------------------------------------*/
-#header .logo {
-  width: 100%;
-  max-width: 90px; /* 120pxから90pxに縮小 */
-  line-height: 0;
-  position: fixed;
-  top: 20px; /* 少し上に詰める */
-  left: 20px;
-  z-index: 200;
-  transition: max-width 0.3s; /* サイズ変化を滑らかに */
-}
-
-/*-------------------------------------------
-Main Sections (画像の見切れ対策)
--------------------------------------------*/
-.new-type .img img { 
-  height: auto; /* 固定の高さを解除して自動調整に */
-  max-height: 400px; /* 大きくなりすぎない上限だけ設定 */
-  width: 100%;
-  object-fit: contain; /* 画像全体が見えるように収める */
-}
-
-/* グラフィックデザイン(concept)部分の画像対策 */
-.concept .img {
-  max-width: 70%; /* タブレットで横幅を少し抑える */
-}
-.concept .img img {
-  height: auto;
-  object-fit: contain;
-}
-
-/*-------------------------------------------
-Smartphone & Tablet (Media Queries)
--------------------------------------------*/
-@media screen and (max-width: 1024px) {
-  /* タブレットサイズでの調整 */
-  .new-type {
-    padding: 80px 20px;
-  }
-  .new-type .text {
-    width: 60%;
-  }
-  .new-type .img {
-    width: 35%;
-  }
-  
-  /* グラフィック部分の重なりを解消 */
-  .concept .text {
-    position: static;
-    max-width: 100%;
-    padding: 30px 0;
-    background-color: transparent;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  #header .logo {
-    max-width: 70px; /* スマホではさらに小さく */
-    top: 15px;
-    left: 15px;
-  }
-  /* ...（その他のスマホ設定はそのまま）... */
-}
-/*-------------------------------------------
-Contact & Footer
--------------------------------------------*/
-/* ...（online-storeの記述はそのまま）... */
-
-#footer { 
-  background-color: #666; 
-  padding: 40px 0; /* 上下の余白を少し広げてゆとりを出す */
-}
-#footer .inner { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-}
-
-/* フッターロゴのサイズ調整 */
-#footer .logo img {
-  width: 70px; /* 控えめなサイズに変更 */
-  height: auto;
-  opacity: 0.8; /* 少し透過させると背景に馴染んで上品になります */
-}
-
-#footer .copyright { 
-  color: #fff; 
-  font-size: 11px; /* 少し小さくして繊細な印象に */
-  letter-spacing: 0.05em;
-}
-
-/* スマホ・タブレットでの調整 */
-@media screen and (max-width: 767px) {
-  #footer .inner {
-    flex-direction: column; /* 縦並びにする */
-    gap: 20px;
-  }
-  #footer .logo img {
-    width: 60px; /* スマホではさらに一回り小さく */
-  }
-}
-
-/* style.css の #header .logo img を書き換え・追記 */
-#header .logo img {
-  width: 100%;
-  max-width: 90px;
-  /* 元のロゴが黒系の場合、#666に近い色味にするフィルター */
-  filter: opacity(0.7); /* 黒を少し薄くしてグレーに近づける */
-  transition: opacity 0.3s;
-}
-
-#header .logo a:hover img {
-  opacity: 1; /* ホバーした時に少し濃くする演出 */
-}
-
-/* style.css の #footer .logo img を書き換え・追記 */
-#footer .logo img {
-  width: 70px;
-  height: auto;
-  /* 色を反転させて白っぽくし、メイン背景色(#fdf8f8)に近い明るさに調整 */
-  filter: brightness(0) invert(0.98); 
-}
-
-#footer .logo img {
-  filter: brightness(0) invert(0.98);
-  opacity: 0.9; /* ほんの少しだけ透けさせる */
-}
-
-/* --- ヘッダーロゴの修正 --- */
-#header .logo img {
-  width: 100%;
-  max-width: 90px;
-  /* フィルターで真っ黒を #666 (グレー) に変換する魔法の数値 */
-  filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(95%) contrast(87%);
-  transition: 0.3s;
-}
-
-#header .logo a:hover img {
-  opacity: 0.6; /* ホバー時に少し薄くする */
-}
-
-/* --- フッターロゴの修正 --- */
-#footer .logo img {
-  width: 70px;
-  height: auto;
-  /* フィルターで色を反転させ、メイン背景色(#fdf8f8)に近い明るいベージュ白にする */
-  filter: brightness(0) invert(98%) sepia(5%) saturate(100%) hue-rotate(320deg) brightness(102%) contrast(97%);
-  opacity: 0.9;
-}
-body {
-  background-color: #fdf8f8;
-  color: #333;
-
-/* style.css の .new-type 部分を修正 */
-.new-type { 
-  display: flex; 
-  align-items: center; 
-  justify-content: flex-start; /* 左寄せに変更 */
-}
-
-/* そのままだとテキストと画像がくっつきすぎるので、画像に左余白を作る */
-.new-type .img { 
-  width: 30%; 
-  margin-left: 5%; /* テキストと画像の間に5%の隙間を作る */
-}
-
-/* Skillsセクションのボタンにホバー効果を追加 */
-.tool-tags li {
-  font-size: 12px;
-  padding: 6px 16px;
-  border: 1px solid #333;
-  border-radius: 20px;
-  transition: all 0.3s; /* 変化を滑らかに */
-  cursor: default; /* クリック用でない場合はこれ、リンクならpointerに */
-}
-
-/* マウスを重ねた時の色の変化 */
-.tool-tags li:hover {
-  background-color: #333; /* 背景を黒に */
-  color: #fdf8f8;        /* 文字をメイン背景色のベージュに */
-}
-
