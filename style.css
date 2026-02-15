@@ -253,3 +253,45 @@ Skills (ここを元のデザインに固定)
     margin-bottom: 60px;
   }
 }
+
+/* --- コンタクトページ専用の強制リセット --- */
+.contact-form {
+  display: block !important;    /* 横並びを強制解除 */
+  max-width: 600px !important;  /* 幅を制限 */
+  margin: 0 auto !important;    /* 左右中央に配置 */
+  padding: 40px 20px 100px !important;
+  text-align: left;             /* 中の文字は左揃え */
+}
+
+.contact-form form {
+  width: 100% !important;
+  display: block !important;
+}
+
+.form-item {
+  width: 100% !important;
+  margin-bottom: 30px !important;
+}
+
+.form-item input,
+.form-item textarea {
+  width: 100% !important;
+  box-sizing: border-box; /* 枠線が外にはみ出さないようにする */
+}
+
+/* --- ナビゲーションの強制右寄せ --- */
+#header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.nav {
+  position: static !important; /* 一旦固定を外して右側に配置 */
+  margin-left: auto !important; 
+}
+
+.nav-list {
+  display: flex !important;
+  gap: 30px !important;
+}
