@@ -403,9 +403,28 @@ Skills
   transition: transform 0.5s ease; 
 }
 
-/* ★ここを追加：ヘッダーを隠すためのクラス */
-#header.hide {
-  transform: translateY(-100%); /* 画面の上に追い出す */
+/* --- style.css のヘッダー部分を修正 --- */
+#header {
+  /* position: fixed; ←これを削除またはコメントアウト */
+  position: absolute; /* ページの一番上に配置され、スクロールで消えるようになります */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 80px; など、お好みの高さに */
+  background-color: transparent; /* 背景を透明にするとよりスッキリします */
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0; /* ゆったりとした余白を持たせる */
+  z-index: 1000;
 }
+
+/* メインコンテンツの余白調整 */
+main {
+  padding-top: 180px; /* ヘッダーが absolute になると重なるので、その分メインを下げます */
+}
+
+
 
 
