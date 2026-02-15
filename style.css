@@ -123,3 +123,48 @@ Smartphone (iPhone SE対応)
   .submit-btn { width: 100%; }
 }
 
+/* ===========================================
+   FINAL ADJUSTMENT: Footer Logo & Layout
+   =========================================== */
+
+/* フッターの背景色と余白 */
+#footer {
+  display: block !important;
+  background-color: #666 !important; /* 濃いグレー */
+  padding: 60px 0 !important;
+  width: 100% !important;
+  margin-top: 100px !important;
+  clear: both;
+}
+
+/* フッター内のレイアウト */
+#footer .inner {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ★フッターのロゴを白くするフィルターを再適用 */
+#footer .logo img {
+  width: 70px !important;
+  filter: brightness(0) invert(1) !important; /* これで真っ白になります */
+  opacity: 0.9;
+}
+
+#footer .copyright {
+  color: #fff !important;
+  font-size: 11px;
+}
+
+/* スマホ時のフッター調整 */
+@media screen and (max-width: 767px) {
+  #footer .inner {
+    flex-direction: column !important;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
