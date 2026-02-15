@@ -251,3 +251,28 @@ Smartphone (iPhone SE対応)
     font-size: 18px !important;
   }
 }
+
+/*-------------------------------------------
+Skills
+-------------------------------------------*/
+.service-details { padding: 60px 20px; }
+.service-block { margin-bottom: 60px; border-bottom: 1px solid #e0e0e0; padding-bottom: 40px; }
+.tool-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+/* 元のスタイル */
+.tool-tags li { 
+  font-size: 12px; 
+  padding: 6px 15px; 
+  border: 1px solid #333; 
+  border-radius: 20px; 
+  transition: all 0.3s ease; /* アニメーションを滑らかにするために追加 */
+  cursor: default; /* マウスが乗った時に「選択できる感」を出すなら pointer に変更 */
+}
+
+/* ★ここを追加：マウスを重ねた時の設定 */
+.tool-tags li:hover {
+  background-color: #333; /* 背景を黒に */
+  color: #fff;           /* 文字を白に */
+}
+
+
