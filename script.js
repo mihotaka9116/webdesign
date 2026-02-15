@@ -28,16 +28,3 @@
   });
 </script>
 
-let lastScrollY = window.scrollY;
-const header = document.getElementById('header');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > lastScrollY && window.scrollY > 100) {
-    // 下にスクロールしたらヘッダーを隠す
-    header.classList.add('hide');
-  } else {
-    // 上にスクロールしたらヘッダーを表示する
-    header.classList.remove('hide');
-  }
-  lastScrollY = window.scrollY;
-});
