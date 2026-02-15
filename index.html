@@ -20,6 +20,26 @@
   </h1>
 
   <div class="hamburger" id="js-hamburger">
+<script>
+  const hamburger = document.getElementById('js-hamburger');
+  const nav = document.getElementById('js-nav');
+  const navLinks = document.querySelectorAll('.nav-list a');
+
+  // ボタンをクリックした時の動き
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+  });
+
+  // リンクをクリックしたらメニューを閉じる
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+    });
+  });
+</script>
+  
   <span></span>
   <span></span>
   <span></span>
