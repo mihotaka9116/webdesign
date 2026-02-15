@@ -382,3 +382,38 @@ Contact & Footer
   filter: brightness(0) invert(98%) sepia(5%) saturate(100%) hue-rotate(320deg) brightness(102%) contrast(97%);
   opacity: 0.9;
 }
+body {
+  background-color: #fdf8f8;
+  color: #333;
+  /* フォントの優先順位を最適化 */
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  
+  /* アンチエイリアスを有効にして文字を滑らかにする */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* 文字のカーニング（詰め）を自動で行う */
+  font-feature-settings: "palt";
+  
+  /* 行間を少し広げて読みやすくする */
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+}
+
+.section-title, 
+.page-header-simple h1 {
+  /* 文字の間隔を広げて「間」を作る */
+  letter-spacing: 0.15em;
+  
+  /* 太すぎないように設定（明朝体は細い方が綺麗です） */
+  font-weight: 500;
+  
+  /* 縦横比を整える */
+  font-variant-ligatures: common-ligatures;
+}
+
+.description {
+  text-align: justify;
+  /* 最後の行は左寄せにする */
+  text-justify: inter-character;
+}
