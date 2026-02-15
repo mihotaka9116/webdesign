@@ -385,4 +385,27 @@ Skills
   justify-content: center; /* メニューも中央寄せ */
 }
 
+/* --- style.css のヘッダー部分を修正 --- */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* お好みの高さに */
+  background-color: rgba(253, 248, 248, 0.95);
+  display: flex;
+  flex-direction: column; /* パターンA: ロゴとナビを中央に並べる場合 */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  
+  /* ★ここを追加：アニメーションを滑らかにする */
+  transition: transform 0.5s ease; 
+}
+
+/* ★ここを追加：ヘッダーを隠すためのクラス */
+#header.hide {
+  transform: translateY(-100%); /* 画面の上に追い出す */
+}
+
 
