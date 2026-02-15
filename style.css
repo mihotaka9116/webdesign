@@ -215,3 +215,15 @@ Smartphone (Media Queries)
   .new-type .img img { height: auto; }
   .portfolio-buttons { grid-template-columns: 1fr; }
 }
+
+/* style.css の .new-type 部分を書き換え */
+.new-type .text {
+  width: 60%; /* テキストを広くする */
+}
+.new-type .img {
+  width: 40%; /* 画像を少し狭くする */
+}
+.new-type .img img {
+  height: 400px; /* 高さを少し低くする */
+  object-fit: cover;
+}
