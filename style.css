@@ -425,6 +425,41 @@ main {
   padding-top: 180px; /* ヘッダーが absolute になると重なるので、その分メインを下げます */
 }
 
+/* --- ヘッダーの修正 --- */
+#header {
+  position: absolute; /* 固定を解除 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* background-color を透明に設定されている場合はそのままでOK */
+  background-color: transparent; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  
+  /* ★ここがポイント：上部の余白をしっかり確保する */
+  padding: 60px 0 20px; 
+  
+  z-index: 1000;
+}
+
+#header .logo {
+  margin: 0 auto;
+  line-height: 1; /* 余計な行間をリセット */
+}
+
+#header .logo img {
+  width: 110px;
+  height: auto;
+  display: block; /* 画像の下に隙間ができないように */
+}
+
+/* メインコンテンツの開始位置も微調整 */
+main {
+  padding-top: 220px; /* ロゴ＋メニュー＋余白の分だけコンテンツを下げる */
+}
+
 
 
 
