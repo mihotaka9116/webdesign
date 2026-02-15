@@ -249,3 +249,26 @@ Smartphone & Tablet
   .portfolio-buttons { grid-template-columns: 1fr; }
   #footer .inner { flex-direction: column; gap: 20px; }
 }
+
+/* --- Web Design (全体を右へ寄せる調整) --- */
+.new-type { 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start; /* 左寄せのまま、余白でコントロール */
+  padding-left: 10%;           /* ★ここで全体を右に押し出す（数値はお好みで） */
+}
+
+.new-type .text { 
+  width: 50%; /* テキスト幅を少し絞ると、より右寄りに見えます */
+}
+
+.new-type .text .text-inner { 
+  max-width: 520px; 
+  padding: 0 40px; 
+  /* margin-left: auto; は削除して左揃えに統一 */
+}
+
+.new-type .img { 
+  width: 30%; 
+  margin-left: 3%; /* テキストと画像の間隔 */
+}
