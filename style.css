@@ -255,3 +255,75 @@ Footer
 .form-item textarea {
   box-sizing: border-box !important; /* 枠線が外に飛び出さないようにする */
 }
+
+/* ===========================================
+   iPhone SE & スマホ 最終修正（最優先）
+   =========================================== */
+@media screen and (max-width: 480px) {
+  /* 1. ロゴを絶対に見えるサイズに固定 */
+  #header .logo img {
+    width: 110px !important;
+    height: auto !important;
+    min-width: 100px !important;
+  }
+
+  /* 2. ヘッダーのレイアウトを強制固定 */
+  #header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+    position: fixed !important;
+    background-color: #fdf8f8 !important; /* 背景色をつけて文字を読みやすく */
+  }
+
+  /* 3. ナビゲーションを右端に配置 */
+  .nav {
+    position: static !important;
+    margin-left: auto !important;
+  }
+  .nav-list {
+    display: flex !important;
+    gap: 12px !important;
+  }
+  .nav-list li a {
+    font-size: 11px !important;
+  }
+
+  /* 4. コンタクトフォームを確実に中央へ */
+  main {
+    display: block !important;
+    padding-top: 100px !important; /* ヘッダーの下から開始 */
+  }
+
+  .contact-form {
+    display: block !important;
+    width: 90% !important;
+    max-width: 340px !important;
+    margin: 40px auto !important; /* 左右autoで中央 */
+    padding: 0 !important;
+  }
+
+  .contact-form form {
+    width: 100% !important;
+  }
+}
+
+/* ===========================================
+   メッセージ欄がクリックで開く（広がる）設定
+   =========================================== */
+.expand-textarea {
+  width: 100%;
+  height: 50px; /* 最初は1行分くらいの高さ */
+  padding: 12px;
+  border: 1px solid #333;
+  transition: height 0.4s ease; /* じわっと広がるアニメーション */
+  resize: none; /* 右下のツマミを消す */
+}
+
+/* クリック（フォーカス）した時に高さが広がる */
+.expand-textarea:focus {
+  height: 200px; /* 広がった後の高さ */
+  outline: none;
+  border-color: #888;
+}
