@@ -505,12 +505,12 @@ p {
   filter: contrast(20);
 }
 
-/* .blend-area {
+/.blend-area {
   width: 100%;
   height: 100%;
   background: #FFF;
   overflow: hidden;
-} */
+} 
 
 .bar1 {
   position: absolute;
