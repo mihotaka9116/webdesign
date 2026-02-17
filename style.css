@@ -556,22 +556,6 @@ p {
 
 .container {
   position: relative;
-  background: #fff;
-  width: 100%;
-  height: 300px;
-  filter: hue-rotate(330deg) brightness(200%);
-}
-
-body {
-  margin: 0;
-}
-
-p {
-  margin: 10px;
-}
-
-.container {
-  position: relative;
   background: #FFF;
   width: 100%;
   height: 300px;
@@ -585,100 +569,98 @@ p {
   overflow: hidden;
 } */
 
-/* ===========================================
-   Drip Animation (しずくの設定)
-   =========================================== */
-
-/* 全体のコンテナ：ここで透明度を調整 */
-.drip-container {
-  position: relative;
-  background: #fff; /* 背景は白 */
-  width: 100%;
-  height: 250px;    /* 高さを少し調整 */
-  overflow: hidden;
-  filter: contrast(20); /* 粘り気を出す */
-  opacity: 0.4;         /* ★ここで「目立たなさ」を調整（0.1〜1.0） */
-}
-
-/* 粘り気のベースとなる上のバー */
-.blend-area .bar {
+.bar1 {
   position: absolute;
-  top: 0;
   width: 100%;
   height: 20px;
-  background: #d9f2ff; /* 薄い水色 */
+  background: #00ffff;
   filter: blur(10px);
 }
 
-/* 落ちるしずく本体 */
-.blend-area .drip {
+.bar2 {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: #00ffff;
+}
+
+.drops div {
   position: absolute;
   top: -50px;
-  left: 50%;
-  width: 50px;
-  height: 60px;
+  width: 55px;
+  height: 70px;
   border-radius: 50%;
-  background: #d9f2ff; /* 薄い水色 */
+  background: #00ffff;
   filter: blur(10px);
-  animation: drop-anim 4s linear infinite; /* 少しゆっくりめに */
+  animation: drop-anim 3s linear infinite;
 }
 
-/* しずくが落ちるアニメーション */
+.drops div:nth-child(1) {
+  left: calc(5% - 25px);
+  animation-delay: 0.3s;
+}
+
+.drops div:nth-child(2) {
+  left: calc(15% - 25px);
+  animation-delay: 2.1s;
+}
+
+.drops div:nth-child(3) {
+  left: calc(25% - 25px);
+  animation-delay: 1.8s;
+}
+
+.drops div:nth-child(4) {
+  left: calc(35% - 25px);
+  animation-delay: 1.2s;
+}
+
+.drops div:nth-child(5) {
+  left: calc(45% - 25px);
+  animation-delay: 2.7s;
+}
+
+.drops div:nth-child(6) {
+  left: calc(55% - 25px);
+  animation-delay: 0s;
+}
+
+.drops div:nth-child(7) {
+  left: calc(65% - 25px);
+  animation-delay: 1.5s;
+}
+
+.drops div:nth-child(8) {
+  left: calc(75% - 25px);
+  animation-delay: 0.3s;
+}
+
+.drops div:nth-child(9) {
+  left: calc(85% - 25px);
+  animation-delay: 0.9s;
+}
+
+.drops div:nth-child(10) {
+  left: calc(95% - 25px);
+  animation-delay: 2.4s;
+}
+
+
 @keyframes drop-anim {
   0% {
-    top: -40px;
-    transform: scale(0.8);
+    top: -30px;
+    transform: scale(0.25);
   }
-  30% {
-    top: 10px; /* バーから離れる瞬間 */
-    transform: scale(1.1, 0.9);
+
+  80% {
+    top: 15px;
+    transform: scale(0.65);
   }
+
   100% {
     top: 100%;
-    transform: scale(1);
+    transform: scale(0.65);
   }
 }
 
-/* --- しずくアニメーション最終調整 --- */
 
-.drip-container {
-  position: relative;
-  background: #fff; /* 背景を白に固定 */
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  filter: contrast(20); /* 粘り気を出す */
-  /* ★目立たせたくない場合は、下の0.3を0.1に近づけてください */
-  opacity: 0.3; 
-}
-
-.blend-area .bar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 30px;
-  background: #d9f2ff; /* 薄い水色 */
-  filter: blur(15px);
-}
-
-.blend-area .drip {
-  position: absolute;
-  top: -60px;
-  width: 60px;
-  height: 80px;
-  border-radius: 50%;
-  background: #d9f2ff; /* 薄い水色 */
-  filter: blur(15px);
-  animation: drop-anim 5s linear infinite;
-}
-
-/* しずくの位置をバラけさせる */
-.drip1 { left: 20%; animation-delay: 0s; }
-.drip2 { left: 50%; animation-delay: 2s; }
-.drip3 { left: 80%; animation-delay: 3.5s; }
-
-@keyframes drop-anim {
-  0% { top: -60px; transform: scale(0.8); }
-  20% { top: 10px; transform: scale(1.2, 0.8); }
-  100% { top: 100%; transform: scale(1); }
-}
