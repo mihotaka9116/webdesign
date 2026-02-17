@@ -670,100 +670,20 @@ main {
   vertical-align: bottom; /* これで下の隙間が消えます */
 }
 
-/* --- しずくの大きさとスピードを調整 --- */
-
-.drops div {
-  /* ① 大きさを小さくする（55px → 30px くらいに） */
-  width: 25px; 
-  height: 40px;
-  
-  /* ② スピードを遅くする（3s → 8s くらいに） */
-  animation: drop-anim 8s linear infinite;
-  
-  /* その他の設定は維持 */
-  position: absolute;
-  top: -50px;
-  border-radius: 50%;
-  background: #00ffff;
-  filter: blur(10px);
-}
-
-/* --- アニメーションの動きをさらに滑らかに --- */
-@keyframes drop-anim {
-  0% {
-    top: -40px;
-    transform: scale(0.3); /* 最初は小さく */
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6; /* じわっと現れる */
-  }
-  80% {
-    top: 20px;
-    transform: scale(0.8, 1.1); /* 少し縦長に伸びる（粘り気） */
-  }
-  100% {
-    top: 100%;
-    transform: scale(0.7);
-    opacity: 0; /* 消えながら落ちる */
-  }
-}
-
-/* --- しずくの見た目と動きを確定させる --- */
+/* --- しずくの見た目（小粒・水色） --- */
 .drops div {
   position: absolute;
-  top: -100px; /* 開始位置をしっかり上に */
-  width: 20px !important; /* 小さく設定 */
-  height: 30px !important;
+  top: -100px;
+  width: 15px !important;    /* さらに小粒に調整 */
+  height: 25px !important;
   border-radius: 50%;
-  background: #d9f2ff !important; /* 以前の綺麗な水色に戻すならこれ */
-  filter: blur(5px) !important; /* ぼかしを少し弱めて存在感を出す */
-  animation: drop-anim 8s linear infinite !important; /* 8秒でゆっくり */
+  background: #00ffff !important; 
+  filter: blur(4px) !important;
+  animation: drop-anim 10s linear infinite !important; /* 10秒でかなりゆっくり */
   opacity: 0;
 }
 
-/* アニメーションの内容を定義 */
-@keyframes drop-anim {
-  0% {
-    top: -50px;
-    transform: scale(0.3);
-    opacity: 0;
-  }
-  5% {
-    opacity: 0.6;
-  }
-  80% {
-    top: 50px; /* 粘り気を見せる位置 */
-    transform: scale(0.8, 1.2); /* 縦に伸ばす */
-    opacity: 0.6;
-  }
-  100% {
-    top: 300px; /* containerの高さ(300px)まで落とす */
-    transform: scale(0.7);
-    opacity: 0;
-  }
-}
-
-/* --- 1. しずくを「見える」ように色を調整 --- */
-.drops div {
-  background: #00ffff !important; /* コントラストに負けないハッキリした色に */
-  filter: blur(5px) !important;  /* ぼかしを少し弱めて存在感を出す */
-  width: 20px !important;        /* サイズ指定 */
-  height: 30px !important;
-  top: -50px !important;         /* 開始位置をリセット */
-  animation: drop-anim 8s linear infinite !important; /* 速度を8秒に固定 */
-}
-
-/* --- 2. 土台となる背景の設定を修正 --- */
-.container {
-  background: #fdf8f8 !important; /* 背景色 */
-  height: 300px !important;
-  overflow: hidden !important;    /* 枠外を隠す */
-  filter: contrast(15) !important; /* コントラストを少し弱めてしずくを残す */
-  opacity: 1 !important;          /* 一旦1にして見えるか確認 */
-}
-
-/* --- 3. アニメーションの再定義 --- */
+/* --- しずくの動き（ゆっくり・粘り気） --- */
 @keyframes drop-anim {
   0% {
     top: -50px;
@@ -771,39 +691,36 @@ main {
     opacity: 0;
   }
   10% {
-    opacity: 1;
+    opacity: 1; /* 現れる */
   }
-  80% {
-    top: 60px; /* 粘る位置 */
-    transform: scale(1, 1.3); /* 縦長に伸びる */
+  70% {
+    top: 50px; /* 粘る位置 */
+    transform: scale(1, 1.4); /* ぐーっと縦に伸びる */
   }
   100% {
-    top: 320px; /* 下まで突き抜ける */
+    top: 350px; /* 下まで落ちきる */
     transform: scale(0.8);
     opacity: 0;
   }
 }
 
-/* --- 画像やロゴのホバー時の透けを解除 --- */
+/* 土台の設定 */
+.container {
+  background: #fdf8f8 !important; 
+  height: 300px !important;
+  overflow: hidden !important;
+  filter: contrast(18) !important; /* 水滴がくっつく粘り気 */
+  position: relative;
+  z-index: 1;
+}
 
-/* ヘッダーのロゴ */
-#header .logo a:hover {
+/* --- 全ての画像リンクでホバー時の透けを解除 --- */
+a:hover img {
   opacity: 1 !important;
 }
 
-/* メインコンテンツ内の画像リンクすべて */
-.concept .img a:hover,
-.new-type .img a:hover,
-.main-visual a:hover {
-  opacity: 1 !important;
-}
-
-/* その他、画像全般のリンク */
-a img:hover {
-  opacity: 1 !important;
-}
-
-/* フッターのロゴ */
+/* ロゴ専用（フィルターなどがあるため個別指定） */
+#header .logo a:hover,
 #footer .logo a:hover {
   opacity: 1 !important;
 }
