@@ -199,3 +199,21 @@ Smartphone Adjustments (スマホ時のバランス)
     margin: 0 auto;
   }
 }
+
+/*-------------------------------------------
+Graphic Design ロゴのスマホサイズ調整
+-------------------------------------------*/
+/* PC版の指定（念のため再設定） */
+.concept .img {
+  width: 15%; 
+  min-width: 120px;
+}
+
+/* スマホ版（画面幅が767px以下の時） */
+@media screen and (max-width: 767px) {
+  .concept .img {
+    width: 25% !important; /* 幅を80%→25%に大幅に絞ります */
+    min-width: 80px;      /* 小さくなりすぎない下限 */
+    margin: 0 auto 20px;  /* 中央に寄せて下に少し余白 */
+  }
+}
