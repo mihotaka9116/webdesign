@@ -681,3 +681,41 @@ p {
   }
 }
 
+/* --- しずくのコンテナ設定 --- */
+.container {
+  position: relative;
+  background: #FFF;
+  width: 100%;
+  height: 300px;
+  filter: contrast(20); /* 粘り気を出すためのフィルター */
+  opacity: 0.5;         /* ★ここで全体を薄くして「目立たなさ」を調整します */
+}
+
+/* --- しずくの色の修正（透明度は使わず、非常に薄い色を指定） --- */
+
+.bar1 {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: #d9f2ff; /* パステル水色のベタ塗り */
+  filter: blur(10px);
+}
+
+.bar2 {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: #d9f2ff;
+}
+
+.drops div {
+  position: absolute;
+  top: -50px;
+  width: 55px;
+  height: 70px;
+  border-radius: 50%;
+  background: #d9f2ff; /* しずくの色を不透明に戻す */
+  filter: blur(10px);
+  animation: drop-anim 3s linear infinite;
+}
+
