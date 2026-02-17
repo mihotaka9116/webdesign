@@ -562,57 +562,120 @@ p {
   filter: hue-rotate(330deg) brightness(200%);
 }
 
-/* --- しずくアニメーションエリアの統合設定 --- */
-.drip-container {
-  position: relative;
-  width: 100%;
-  height: 300px;      /* 高さを確保 */
-  background: #fff;   /* 背景は白固定（フィルター用） */
-  overflow: hidden;
-  filter: contrast(20); /* 粘り気を出すためのコントラスト */
-  z-index: 1;         /* 他の要素に埋もれないように */
+body {
+  margin: 0;
 }
 
-.blend-area {
+p {
+  margin: 10px;
+}
+
+.container {
+  position: relative;
+  background: #FFF;
+  width: 100%;
+  height: 300px;
+  filter: contrast(20);
+}
+
+/* .blend-area {
   width: 100%;
   height: 100%;
-  background: #fff;
-  filter: blur(10px); /* ぼかし */
-}
+  background: #FFF;
+  overflow: hidden;
+} */
 
-.bar {
+.bar1 {
   position: absolute;
-  top: 0;
   width: 100%;
-  height: 40px;
-  background: #D3EDFB; /* 水色 */
+  height: 20px;
+  background: #00ffff;
+  filter: blur(10px);
 }
 
-.drip {
+.bar2 {
   position: absolute;
-  top: -60px;          /* 初期位置を少し上に */
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  background: #D3EDFB;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  animation: drip-anim 3.5s infinite ease-in; /* アニメーション適用 */
+  width: 100%;
+  height: 20px;
+  background: #00ffff;
 }
 
-/* 落ちる動きのアニメーション */
-@keyframes drip-anim {
+.drops div {
+  position: absolute;
+  top: -50px;
+  width: 55px;
+  height: 70px;
+  border-radius: 50%;
+  background: #00ffff;
+  filter: blur(10px);
+  animation: drop-anim 3s linear infinite;
+}
+
+.drops div:nth-child(1) {
+  left: calc(5% - 25px);
+  animation-delay: 0.3s;
+}
+
+.drops div:nth-child(2) {
+  left: calc(15% - 25px);
+  animation-delay: 2.1s;
+}
+
+.drops div:nth-child(3) {
+  left: calc(25% - 25px);
+  animation-delay: 1.8s;
+}
+
+.drops div:nth-child(4) {
+  left: calc(35% - 25px);
+  animation-delay: 1.2s;
+}
+
+.drops div:nth-child(5) {
+  left: calc(45% - 25px);
+  animation-delay: 2.7s;
+}
+
+.drops div:nth-child(6) {
+  left: calc(55% - 25px);
+  animation-delay: 0s;
+}
+
+.drops div:nth-child(7) {
+  left: calc(65% - 25px);
+  animation-delay: 1.5s;
+}
+
+.drops div:nth-child(8) {
+  left: calc(75% - 25px);
+  animation-delay: 0.3s;
+}
+
+.drops div:nth-child(9) {
+  left: calc(85% - 25px);
+  animation-delay: 0.9s;
+}
+
+.drops div:nth-child(10) {
+  left: calc(95% - 25px);
+  animation-delay: 2.4s;
+}
+
+
+@keyframes drop-anim {
   0% {
-    top: 0;
-    transform: translateX(-50%) scale(1.5, 0.8); /* 横に伸びて準備 */
+    top: -30px;
+    transform: scale(0.25);
   }
-  25% {
-    top: 30px;
-    transform: translateX(-50%) scale(0.8, 1.3); /* 縦に伸びて落ち始める */
+
+  80% {
+    top: 15px;
+    transform: scale(0.65);
   }
-  80%, 100% {
-    top: 100%; /* 下まで落ちきる */
-    transform: translateX(-50%) scale(1, 1);
+
+  100% {
+    top: 100%;
+    transform: scale(0.65);
   }
 }
 
