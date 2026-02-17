@@ -899,15 +899,30 @@ Contact & Footer
   }
 }
 
-/* --- 横長バーの厚みを出す設定 --- */
+/* ===========================================
+   横長バーの厚み調整 
+   =========================================== */
 .bar1 {
   position: absolute !important;
-  top: -20px !important;    /* ★高さを出した分、少し上にずらして馴染ませる */
+  /* バーを少し上に隠して、ボケ足だけが見えるように調整 */
+  top: -30px !important;    
   left: 0 !important;
   width: 100% !important;
-  height: 60px !important;   /* ★ここをお好みの高さに（元の15px〜30pxから大幅アップ） */
+  /* ★厚み：ここを80pxに増量しました（さらにお好みで調整可） */
+  height: 80px !important;   
   background: #00ffff !important;
-  filter: blur(20px) !important; /* ★厚みに合わせてぼかしも強くすると、より液体らしくなります */
+  /* 厚みに合わせてぼかしを強くし、液体感をUP */
+  filter: blur(25px) !important; 
+  -webkit-filter: blur(25px) !important;
   z-index: 2;
 }
 
+/* バーを厚くした分、しずくの開始位置も微調整して「ちぎれる」感じを出す */
+.drops div {
+  top: -40px !important; 
+}
+
+/* 土台の高さも、バーに合わせて少し余裕を持たせると綺麗です */
+.container, .drip-section, [class*="drops-container"] {
+  height: 400px !important; 
+}
