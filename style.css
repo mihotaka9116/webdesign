@@ -465,13 +465,13 @@ html {
 
 /* ヘッダーやメインのロゴ (tlogo.svg) */
 img[src*="tlogo.svg"] {
-  width: 80px; /* お好みに合わせて70px〜90pxの間で調整してください */
+  width: 60px; /* お好みに合わせて70px〜90pxの間で調整してください */
   height: auto;
 }
 
 /* フッターなどのロゴ (crosslogo.svg) */
 img[src*="crosslogo.svg"] {
-  width: 40px; /* crosslogoは元々小さめだと思うので、30px〜50px程度で調整 */
+  width: 80px; /* crosslogoは元々小さめだと思うので、30px〜50px程度で調整 */
   height: auto;
 }
 
