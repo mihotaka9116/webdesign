@@ -658,3 +658,61 @@ p {
   }
 }
 
+/* --- しずくアニメーションの専用スタイル --- */
+
+/* 外側の箱：コントラストを強くして粘りを出す */
+.drip-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: #fff; /* 背景は必ず白にする */
+  overflow: hidden;
+  filter: contrast(20); /* これがないとしずくが丸くなりません */
+}
+
+/* ぼかしをかけるエリア */
+.blend-area {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  filter: blur(10px); /* ぼかしたものがコントラストでくっついて見えます */
+}
+
+/* 上のバー（水たまり） */
+.bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background: #D3EDFB; /* 水色 */
+}
+
+/* たれるしずく */
+.drip {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: #D3EDFB;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: drip-anim 4s infinite ease-in;
+}
+
+/* 落ちるアニメーション */
+@keyframes drip-anim {
+  0% {
+    top: 0;
+    transform: translateX(-50%) scale(1.5, 0.8);
+  }
+  20% {
+    top: 30px;
+    transform: translateX(-50%) scale(0.8, 1.2);
+  }
+  100% {
+    top: 100%;
+    transform: translateX(-50%) scale(1, 1);
+  }
+}
+
