@@ -783,3 +783,27 @@ main {
     opacity: 0;
   }
 }
+
+/* --- 画像やロゴのホバー時の透けを解除 --- */
+
+/* ヘッダーのロゴ */
+#header .logo a:hover {
+  opacity: 1 !important;
+}
+
+/* メインコンテンツ内の画像リンクすべて */
+.concept .img a:hover,
+.new-type .img a:hover,
+.main-visual a:hover {
+  opacity: 1 !important;
+}
+
+/* その他、画像全般のリンク */
+a img:hover {
+  opacity: 1 !important;
+}
+
+/* フッターのロゴ */
+#footer .logo a:hover {
+  opacity: 1 !important;
+}
