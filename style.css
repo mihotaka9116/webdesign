@@ -499,7 +499,7 @@ p {
 
 .container {
   position: relative;
-  background: #d9f2ff;
+  background: #fff;
   width: 100%;
   height: 300px;
   filter: contrast(20);
