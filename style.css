@@ -585,137 +585,56 @@ p {
   overflow: hidden;
 } */
 
-/* --- しずくの色の修正 --- */
+/* ===========================================
+   Drip Animation (しずくの設定)
+   =========================================== */
 
-.bar1 {
+/* 全体のコンテナ：ここで透明度を調整 */
+.drip-container {
+  position: relative;
+  background: #fff; /* 背景は白 */
+  width: 100%;
+  height: 250px;    /* 高さを少し調整 */
+  overflow: hidden;
+  filter: contrast(20); /* 粘り気を出す */
+  opacity: 0.4;         /* ★ここで「目立たなさ」を調整（0.1〜1.0） */
+}
+
+/* 粘り気のベースとなる上のバー */
+.blend-area .bar {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 20px;
-  background: rgba(211, 237, 251, 0.6); /* 薄い水色 & 透明度60% */
+  background: #d9f2ff; /* 薄い水色 */
   filter: blur(10px);
 }
 
-.bar2 {
-  position: absolute;
-  width: 100%;
-  height: 20px;
-  background: rgba(211, 237, 251, 0.5); /* さらに少し薄く */
-}
-
-.drops div {
+/* 落ちるしずく本体 */
+.blend-area .drip {
   position: absolute;
   top: -50px;
-  width: 55px;
-  height: 70px;
+  left: 50%;
+  width: 50px;
+  height: 60px;
   border-radius: 50%;
-  background: rgba(211, 237, 251, 0.4); /* しずく自体の透明度を40%に */
+  background: #d9f2ff; /* 薄い水色 */
   filter: blur(10px);
-  animation: drop-anim 3s linear infinite;
+  animation: drop-anim 4s linear infinite; /* 少しゆっくりめに */
 }
 
-.drops div:nth-child(1) {
-  left: calc(5% - 25px);
-  animation-delay: 0.3s;
-}
-
-.drops div:nth-child(2) {
-  left: calc(15% - 25px);
-  animation-delay: 2.1s;
-}
-
-.drops div:nth-child(3) {
-  left: calc(25% - 25px);
-  animation-delay: 1.8s;
-}
-
-.drops div:nth-child(4) {
-  left: calc(35% - 25px);
-  animation-delay: 1.2s;
-}
-
-.drops div:nth-child(5) {
-  left: calc(45% - 25px);
-  animation-delay: 2.7s;
-}
-
-.drops div:nth-child(6) {
-  left: calc(55% - 25px);
-  animation-delay: 0s;
-}
-
-.drops div:nth-child(7) {
-  left: calc(65% - 25px);
-  animation-delay: 1.5s;
-}
-
-.drops div:nth-child(8) {
-  left: calc(75% - 25px);
-  animation-delay: 0.3s;
-}
-
-.drops div:nth-child(9) {
-  left: calc(85% - 25px);
-  animation-delay: 0.9s;
-}
-
-.drops div:nth-child(10) {
-  left: calc(95% - 25px);
-  animation-delay: 2.4s;
-}
-
-
+/* しずくが落ちるアニメーション */
 @keyframes drop-anim {
   0% {
-    top: -30px;
-    transform: scale(0.25);
+    top: -40px;
+    transform: scale(0.8);
   }
-
-  80% {
-    top: 15px;
-    transform: scale(0.65);
+  30% {
+    top: 10px; /* バーから離れる瞬間 */
+    transform: scale(1.1, 0.9);
   }
-
   100% {
     top: 100%;
-    transform: scale(0.65);
+    transform: scale(1);
   }
 }
-
-/* --- しずくのコンテナ設定 --- */
-.container {
-  position: relative;
-  background: #FFF;
-  width: 100%;
-  height: 300px;
-  filter: contrast(20); /* 粘り気を出すためのフィルター */
-  opacity: 0.5;         /* ★ここで全体を薄くして「目立たなさ」を調整します */
-}
-
-/* --- しずくの色の修正（透明度は使わず、非常に薄い色を指定） --- */
-
-.bar1 {
-  position: absolute;
-  width: 100%;
-  height: 20px;
-  background: #d9f2ff; /* パステル水色のベタ塗り */
-  filter: blur(10px);
-}
-
-.bar2 {
-  position: absolute;
-  width: 100%;
-  height: 20px;
-  background: #d9f2ff;
-}
-
-.drops div {
-  position: absolute;
-  top: -50px;
-  width: 55px;
-  height: 70px;
-  border-radius: 50%;
-  background: #d9f2ff; /* しずくの色を不透明に戻す */
-  filter: blur(10px);
-  animation: drop-anim 3s linear infinite;
-}
-
