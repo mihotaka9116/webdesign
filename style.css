@@ -1106,3 +1106,70 @@ Contact & Footer
     opacity: 0;
   }
 }
+
+/* --- 1. 土台の設定（白っぽさを解消） --- */
+.container {
+  position: relative;
+  background: #fdf8f8; /* ★ここをサイトの背景色と完全に一致させる */
+  width: 100%;
+  height: 300px;
+  filter: contrast(30); /* ★コントラストを少し強めてクッキリさせる */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* --- 2. 上に溜まっている水の膜（必要なら） --- */
+.bar1 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 15px; /* 少し細く */
+  background: #00ffff;
+  filter: blur(10px);
+}
+
+/* --- 3. しずく本体 --- */
+.drops div {
+  position: absolute;
+  top: -60px; /* 開始位置 */
+  width: 40px; /* ★元の55pxより少し小さくして上品に */
+  height: 40px;
+  border-radius: 50%;
+  background: #00ffff;
+  filter: blur(12px); /* ★ぼかしを強くすることで、粘り気が出ます */
+  animation: drop-anim 8s linear infinite; /* ★3sから8sへ。ゆったり落とす */
+}
+
+/* 落ちる位置の指定（元の設定を維持） */
+.drops div:nth-child(1) { left: 5%; animation-delay: 0.3s; }
+.drops div:nth-child(2) { left: 15%; animation-delay: 2.1s; }
+.drops div:nth-child(3) { left: 25%; animation-delay: 1.8s; }
+.drops div:nth-child(4) { left: 35%; animation-delay: 1.2s; }
+.drops div:nth-child(5) { left: 45%; animation-delay: 2.7s; }
+.drops div:nth-child(6) { left: 55%; animation-delay: 0s; }
+.drops div:nth-child(7) { left: 65%; animation-delay: 1.5s; }
+.drops div:nth-child(8) { left: 75%; animation-delay: 0.3s; }
+.drops div:nth-child(9) { left: 85%; animation-delay: 0.9s; }
+.drops div:nth-child(10) { left: 95%; animation-delay: 2.4s; }
+
+/* --- 4. 粘り気のある動きのアニメーション --- */
+@keyframes drop-anim {
+  0% {
+    top: -50px;
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  /* ここで上に粘っている時間を長くする */
+  40% {
+    top: 5px; 
+    transform: scale(0.9, 1.2); /* 縦に少し伸びる */
+  }
+  /* 一気に落ちる */
+  100% {
+    top: 100%;
+    transform: scale(0.7, 0.7);
+  }
+}
