@@ -489,60 +489,117 @@ img[src*="crosslogo.svg"] {
 }
 
 
-/* --- しずくセクションの最終調整 --- */
+body {
+  margin: 0;
+}
+
+p {
+  margin: 10px;
+}
 
 .container {
   position: relative;
-  background: #FFF; /* 背景は必ず白 */
+  background: #FFF;
   width: 100%;
   height: 300px;
-  filter: contrast(20); /* これで粘り気を出す */
-  overflow: hidden;
-  opacity: 0.5; /* ★ここで全体の「目立たなさ」を調整 */
+  filter: contrast(20);
 }
 
-/* 上部のバー（粘り気の元） */
-.bar1, .bar2 {
+/* .blend-area {
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  overflow: hidden;
+} */
+
+.bar1 {
   position: absolute;
   width: 100%;
   height: 20px;
-  background: #d9f2ff; /* タイポ修正済み */
+  background: #d9f2ff;
   filter: blur(10px);
 }
 
-/* しずく本体 */
+.bar2 {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: #d9f2ff;
+}
+
 .drops div {
   position: absolute;
   top: -50px;
-  width: 35px;
-  height: 50px;
+  width: 55px;
+  height: 70px;
   border-radius: 50%;
-  background: #d9f2ff; /* 薄い水色 */
+  background: #00ffff;
   filter: blur(10px);
-  animation: drop-anim 6s linear infinite;
+  animation: drop-anim 3s linear infinite;
 }
 
-/* 各しずくの位置と遅延（今の設定を維持） */
-.drops div:nth-child(1) { left: 5%; animation-delay: 0.3s; }
-.drops div:nth-child(2) { left: 15%; animation-delay: 2.1s; }
-.drops div:nth-child(3) { left: 25%; animation-delay: 1.8s; }
-.drops div:nth-child(4) { left: 35%; animation-delay: 1.2s; }
-.drops div:nth-child(5) { left: 45%; animation-delay: 2.7s; }
-.drops div:nth-child(6) { left: 55%; animation-delay: 0s; }
-.drops div:nth-child(7) { left: 65%; animation-delay: 1.5s; }
-.drops div:nth-child(8) { left: 75%; animation-delay: 0.3s; }
-.drops div:nth-child(9) { left: 85%; animation-delay: 0.9s; }
-.drops div:nth-child(10) { left: 95%; animation-delay: 2.4s; }
+.drops div:nth-child(1) {
+  left: calc(5% - 25px);
+  animation-delay: 0.3s;
+}
+
+.drops div:nth-child(2) {
+  left: calc(15% - 25px);
+  animation-delay: 2.1s;
+}
+
+.drops div:nth-child(3) {
+  left: calc(25% - 25px);
+  animation-delay: 1.8s;
+}
+
+.drops div:nth-child(4) {
+  left: calc(35% - 25px);
+  animation-delay: 1.2s;
+}
+
+.drops div:nth-child(5) {
+  left: calc(45% - 25px);
+  animation-delay: 2.7s;
+}
+
+.drops div:nth-child(6) {
+  left: calc(55% - 25px);
+  animation-delay: 0s;
+}
+
+.drops div:nth-child(7) {
+  left: calc(65% - 25px);
+  animation-delay: 1.5s;
+}
+
+.drops div:nth-child(8) {
+  left: calc(75% - 25px);
+  animation-delay: 0.3s;
+}
+
+.drops div:nth-child(9) {
+  left: calc(85% - 25px);
+  animation-delay: 0.9s;
+}
+
+.drops div:nth-child(10) {
+  left: calc(95% - 25px);
+  animation-delay: 2.4s;
+}
+
 
 @keyframes drop-anim {
   0% {
     top: -30px;
     transform: scale(0.25);
   }
-  30% {
-    top: 10px; /* バーから離れる瞬間 */
-    transform: scale(1.1, 0.8);
+
+  80% {
+    top: 15px;
+    transform: scale(0.65);
   }
+
   100% {
     top: 100%;
     transform: scale(0.65);
