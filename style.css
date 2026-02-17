@@ -708,3 +708,38 @@ main {
     opacity: 0; /* 消えながら落ちる */
   }
 }
+
+/* --- しずくの見た目と動きを確定させる --- */
+.drops div {
+  position: absolute;
+  top: -100px; /* 開始位置をしっかり上に */
+  width: 20px !important; /* 小さく設定 */
+  height: 30px !important;
+  border-radius: 50%;
+  background: #d9f2ff !important; /* 以前の綺麗な水色に戻すならこれ */
+  filter: blur(5px) !important; /* ぼかしを少し弱めて存在感を出す */
+  animation: drop-anim 8s linear infinite !important; /* 8秒でゆっくり */
+  opacity: 0;
+}
+
+/* アニメーションの内容を定義 */
+@keyframes drop-anim {
+  0% {
+    top: -50px;
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.6;
+  }
+  80% {
+    top: 50px; /* 粘り気を見せる位置 */
+    transform: scale(0.8, 1.2); /* 縦に伸ばす */
+    opacity: 0.6;
+  }
+  100% {
+    top: 300px; /* containerの高さ(300px)まで落とす */
+    transform: scale(0.7);
+    opacity: 0;
+  }
+}
