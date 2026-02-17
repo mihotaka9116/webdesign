@@ -56,3 +56,62 @@ Smartphone (767px以下)
     padding-top: 100px !important;
   }
 }
+
+/*-------------------------------------------
+Smartphone (767px以下)
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  /* 1. ヘッダーのレイアウトを横並びに戻す */
+  #header {
+    flex-direction: row !important; /* 縦並びを解除 */
+    justify-content: space-between !important; /* ロゴを左、ボタンを右へ */
+    padding: 20px !important;
+    height: 70px !important;
+    position: fixed !important; /* スマホでは上部に固定 */
+    background-color: rgba(253, 248, 248, 0.95) !important;
+  }
+
+  /* 2. 通常のナビゲーションを画面外に隠す */
+  #js-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* これで画面の右側に隠れます */
+    width: 80%;
+    height: 100vh;
+    background-color: rgba(253, 248, 248, 0.98);
+    transition: all 0.5s ease;
+    z-index: 1500;
+    padding-top: 100px;
+    display: block !important; /* 消えていた場合のために表示 */
+  }
+
+  /* 3. ボタンを押した時（active）だけ画面内に入れる */
+  #js-nav.active {
+    right: 0 !important;
+  }
+
+  /* 4. メニューを縦並びにする */
+  .nav-list {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+    margin-top: 0 !important;
+  }
+
+  .nav-list li a {
+    font-size: 18px !important;
+  }
+
+  /* 5. ハンバーガーボタンを強制表示 */
+  .hamburger {
+    display: block !important;
+    position: relative !important; /* ヘッダー内の適切な位置に */
+    top: auto !important;
+    right: auto !important;
+  }
+
+  /* 6. メインコンテンツがヘッダーに被らないよう調整 */
+  main {
+    padding-top: 100px !important;
+  }
+}
