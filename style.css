@@ -605,27 +605,6 @@ p {
     transform: scale(0.65);
   }
 }
-
-.drip-section {
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-}
-
-.container {
-  position: relative;
-  background: #FFF;
-  width: 100%;
-  height: 300px;
-  filter: contrast(20);
-  /* ★ここに追加 */
-  opacity: 0.5; 
-}
-
-.container {
-  /* ...他の設定... */
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-}
-
 /* --- メインビジュアルの設定 --- */
 .main-visual {
   width: 100%;
