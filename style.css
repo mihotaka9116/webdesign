@@ -151,3 +151,16 @@ Smartphone Adjustments
   .nav-list { gap: 15px; }
   .nav-list li a { font-size: 11px; }
 }
+
+/* --- Graphic Designのロゴサイズ調整 --- */
+.concept .img {
+  width: 15%; /* 25%から15%に縮小 */
+  min-width: 120px; /* 小さくなりすぎないよう下限を設定 */
+}
+
+/* スマホでは見やすくするために少しサイズを戻す */
+@media screen and (max-width: 767px) {
+  .concept .img {
+    width: 30%; /* スマホ時は画面幅の30%に */
+  }
+}
