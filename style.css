@@ -164,3 +164,10 @@ Smartphone Adjustments
     width: 30%; /* スマホ時は画面幅の30%に */
   }
 }
+
+/* Web Design / Coding セクションを中央に寄せる */
+.new-type {
+  max-width: 1040px; /* 他のセクションと同じ幅にする */
+  margin: 0 auto;    /* 左右中央に配置 */
+  padding: 80px 20px; /* 左右に最低限の余白（20px）を確保 */
+}
