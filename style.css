@@ -781,76 +781,58 @@ Contact & Footer
   z-index: 1;
 }
 
-/* ===========================================
-   しずくアニメーション：決定版
-   =========================================== */
-
-/* 1. 土台：背景色をサイトの色と一致させ、粘り気を出す */
+/* --- 1. 土台と共通設定 --- */
 .container {
   position: relative !important;
-  background-color: #fdf8f8 !important; /* サイト背景と同じ */
+  background-color: #fdf8f8 !important;
   width: 100% !important;
-  height: 400px !important;            /* 高さを確保 */
+  height: 400px !important;
   filter: contrast(30) brightness(1) !important;
   -webkit-filter: contrast(30) brightness(1) !important;
   overflow: hidden !important;
-  z-index: 1;
-  margin: 0 auto !important;
 }
 
-/* 2. 上部の溜まっている水（厚みのあるバー） */
 .bar1 {
   position: absolute !important;
-  top: -35px !important;    /* 少し上に隠してボケ足だけ出す */
+  top: -35px !important;
   left: 0 !important;
   width: 100% !important;
-  height: 90px !important;   /* ★厚みをしっかり出す */
+  height: 90px !important;
   background-color: #00ffff !important;
   filter: blur(20px) !important;
   z-index: 2;
 }
 
-/* 3. しずく本体：ボカシを強くして粘り気を出す */
+/* --- 2. しずくの共通設定（ここには animation-delay を書かない） --- */
 .drops div {
   position: absolute !important;
   background-color: #00ffff !important;
   width: 45px !important; 
   height: 45px !important;
   border-radius: 50% !important;
-  filter: blur(15px) !important; /* ★ここが粘り気の鍵 */
+  filter: blur(15px) !important;
   -webkit-filter: blur(15px) !important;
-  animation: drop-anim 7s linear infinite !important; /* 8秒から7秒に少し速く */
+  animation: drop-anim 7s linear infinite !important; /* 全体の速度 */
   opacity: 0;
   top: -50px;
 }
 
-/* 落ちる位置のバラつき設定 */
-.drops div:nth-child(1) { left: 5%;  animation-delay: 0.3s; }
-.drops div:nth-child(2) { left: 18%; animation-delay: 2.5s; }
-.drops div:nth-child(3) { left: 32%; animation-delay: 1.2s; }
-.drops div:nth-child(4) { left: 45%; animation-delay: 3.8s; }
-.drops div:nth-child(5) { left: 60%; animation-delay: 0.5s; }
-.drops div:nth-child(6) { left: 75%; animation-delay: 2.1s; }
-.drops div:nth-child(7) { left: 90%; animation-delay: 1.5s; }
+/* --- 3. ★重要★ 個別の位置と「時間差」の設定 --- */
+/* ここを共通設定より「下」に書くことで、動きがバラバラになります */
 
-/* 4. アニメーション：粘ってから落ちる動き */
+.drops div:nth-child(1) { left: 5%;  animation-delay: 0.5s !important; }
+.drops div:nth-child(2) { left: 15%; animation-delay: 4.2s !important; }
+.drops div:nth-child(3) { left: 25%; animation-delay: 1.8s !important; }
+.drops div:nth-child(4) { left: 38%; animation-delay: 6.5s !important; }
+.drops div:nth-child(5) { left: 52%; animation-delay: 0.1s !important; }
+.drops div:nth-child(6) { left: 65%; animation-delay: 3.3s !important; }
+.drops div:nth-child(7) { left: 78%; animation-delay: 5.1s !important; }
+.drops div:nth-child(8) { left: 92%; animation-delay: 2.7s !important; }
+
+/* --- 4. アニメーションの内容 --- */
 @keyframes drop-anim {
-  0% {
-    top: -50px;
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  /* 40%から60%にかけてグーッと伸びる */
-  50% {
-    top: 10px; 
-    transform: scale(1.0, 1.8); /* 縦長に伸びる */
-  }
-  100% {
-    top: 100%; /* 下まで落ちきる */
-    transform: scale(0.8, 0.8);
-    opacity: 1;
-  }
+  0% { top: -50px; transform: scale(0.5); opacity: 0; }
+  5% { opacity: 1; }
+  50% { top: 10px; transform: scale(1.0, 1.8); } 
+  100% { top: 110%; transform: scale(0.8); opacity: 1; }
 }
