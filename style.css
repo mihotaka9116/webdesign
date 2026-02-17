@@ -625,3 +625,25 @@ p {
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
   mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 }
+
+/* --- メインビジュアルの設定 --- */
+.main-visual {
+  width: 100%;
+  max-width: 1040px; /* 他のコンテンツ（wrapper）と幅を合わせる場合 */
+  margin: 0 auto 60px; /* 下に余白を作る */
+  text-align: center;
+}
+
+.main-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* スマホ時の調整 */
+@media screen and (max-width: 767px) {
+  .main-visual {
+    margin-bottom: 40px;
+    padding: 0 20px; /* スマホで左右に少し余白を作る場合 */
+  }
+}
