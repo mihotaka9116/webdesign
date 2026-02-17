@@ -669,3 +669,42 @@ main {
 .main-visual img {
   vertical-align: bottom; /* これで下の隙間が消えます */
 }
+
+/* --- しずくの大きさとスピードを調整 --- */
+
+.drops div {
+  /* ① 大きさを小さくする（55px → 30px くらいに） */
+  width: 25px; 
+  height: 40px;
+  
+  /* ② スピードを遅くする（3s → 8s くらいに） */
+  animation: drop-anim 8s linear infinite;
+  
+  /* その他の設定は維持 */
+  position: absolute;
+  top: -50px;
+  border-radius: 50%;
+  background: #00ffff;
+  filter: blur(10px);
+}
+
+/* --- アニメーションの動きをさらに滑らかに --- */
+@keyframes drop-anim {
+  0% {
+    top: -40px;
+    transform: scale(0.3); /* 最初は小さく */
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6; /* じわっと現れる */
+  }
+  80% {
+    top: 20px;
+    transform: scale(0.8, 1.1); /* 少し縦長に伸びる（粘り気） */
+  }
+  100% {
+    top: 100%;
+    transform: scale(0.7);
+    opacity: 0; /* 消えながら落ちる */
+  }
+}
