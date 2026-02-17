@@ -476,3 +476,15 @@ img[src*="crosslogo.svg"] {
 }
 
 
+/* ヘッダーのロゴサイズを強制的に上書き */
+#header .logo img {
+  width: 60px !important;  /* ここでお好みのサイズに調整 */
+  height: auto !important;
+}
+
+/* フッターのロゴも小さくしたい場合はこちら */
+#footer .logo img {
+  width: 60px !important;
+  height: auto !important;
+}
+
