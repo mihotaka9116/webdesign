@@ -836,3 +836,25 @@ Contact & Footer
   50% { top: 10px; transform: scale(1.0, 1.8); } 
   100% { top: 110%; transform: scale(0.8); opacity: 1; }
 }
+
+/* ===========================================
+   バーとしずくの色を鮮やかな水色に統一
+   =========================================== */
+
+/* 1. 上部のバー（溜まっている部分）の色 */
+.bar1 {
+  background-color: #00ffff !important; /* ★ここを好きな色に変更（現在はシアン） */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5) !important; /* ほんのり光らせると綺麗です */
+}
+
+/* 2. 落ちてくるしずく本体の色 */
+.drops div {
+  background-color: #00ffff !important; /* ★バーと同じ色にする */
+}
+
+/* 3. バーをもっと「ボテッ」と厚く見せるための調整 */
+.bar1 {
+  height: 100px !important;    /* さらに厚くしました */
+  top: -40px !important;       /* 厚くした分、少し上にずらして馴染ませる */
+  filter: blur(20px) !important; 
+}
