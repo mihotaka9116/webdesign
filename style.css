@@ -505,7 +505,7 @@ body {
   top: 50%;
   width: 100px;
   height: 100px;
-  background: #fa8072;
+  background: #fadbda;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: expansion-anim 5s linear infinite;
