@@ -858,3 +858,42 @@ Contact & Footer
   top: -40px !important;       /* 厚くした分、少し上にずらして馴染ませる */
   filter: blur(20px) !important; 
 }
+
+/* ===========================================
+   バーとしずくを #D3EDFB に変更 
+   =========================================== */
+
+/* 1. 色と土台の最終調整 */
+.container {
+  background-color: #fdf8f8 !important; /* 背景色 */
+  filter: contrast(25) brightness(1.0) !important; /* 淡い色に合わせてコントラストを微調整 */
+  -webkit-filter: contrast(25) brightness(1.0) !important;
+}
+
+/* 2. 上部のバー（溜まっている部分） */
+.bar1 {
+  background-color: #D3EDFB !important; /* ★ご指定の色 */
+  height: 100px !important;
+  top: -45px !important;
+  filter: blur(20px) !important;
+  z-index: 2 !important;
+}
+
+/* 3. しずく本体 */
+.drops div {
+  background-color: #D3EDFB !important; /* ★ご指定の色 */
+  width: 45px !important;
+  height: 45px !important;
+  filter: blur(15px) !important;
+  -webkit-filter: blur(15px) !important;
+}
+
+/* 4. アニメーション（動きのバラつきを維持） */
+.drops div:nth-child(1) { left: 8%;  animation-delay: 0.5s !important; }
+.drops div:nth-child(2) { left: 22%; animation-delay: 4.5s !important; }
+.drops div:nth-child(3) { left: 35%; animation-delay: 1.2s !important; }
+.drops div:nth-child(4) { left: 48%; animation-delay: 6.8s !important; }
+.drops div:nth-child(5) { left: 62%; animation-delay: 0.2s !important; }
+.drops div:nth-child(6) { left: 75%; animation-delay: 3.5s !important; }
+.drops div:nth-child(7) { left: 88%; animation-delay: 5.3s !important; }
+.drops div:nth-child(8) { left: 95%; animation-delay: 2.1s !important; }
