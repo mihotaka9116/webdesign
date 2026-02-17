@@ -605,3 +605,56 @@ p {
   }
 }
 
+/* --- 水色のしずくアニメーション --- */
+.drip-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* 全体の高さ */
+  background: #fff; /* 背景は白にする（フィルターの効果を出すため） */
+  overflow: hidden;
+  /* ぼかしとコントラストを組み合わせて粘り気を出す */
+  filter: contrast(20); 
+}
+
+.blend-area {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  filter: blur(10px); /* ここで要素をぼかす */
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40px; /* 上部の水たまり */
+  background: #D3EDFB;
+}
+
+.drip {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: #D3EDFB;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: drip-anim 3s infinite ease-in; /* ease-inで重力感を出す */
+}
+
+@keyframes drip-anim {
+  0% {
+    top: 0;
+    transform: translateX(-50%) scale(1.2, 0.8);
+  }
+  20% {
+    top: 20px;
+    transform: translateX(-50%) scale(0.8, 1.2);
+  }
+  100% {
+    top: 100%;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
