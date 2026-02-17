@@ -566,7 +566,7 @@ p {
   width: 100%;
   height: 100%;
   filter: blur(10px) contrast(20);
-  background: #000;
+  background: #fff;
   overflow: hidden;
 }
 
@@ -574,7 +574,7 @@ p {
   position: absolute;
   width: 100%;
   height: 20px;
-  background: #fff;
+  background: #D3EDFB;
 }
 
 .drip {
