@@ -659,3 +659,13 @@ main {
   margin: 0 auto 60px; /* ここの最初の「0」が上の余白です。0になっていればOK */
   text-align: center;
 }
+
+.container {
+  background: #fdf8f8 !important; /* サイトの背景色に合わせる */
+  filter: contrast(20);
+  opacity: 0.5;
+}
+
+.main-visual img {
+  vertical-align: bottom; /* これで下の隙間が消えます */
+}
