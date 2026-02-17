@@ -1,117 +1,153 @@
+@charset "UTF-8";
+
 /*-------------------------------------------
-Smartphone (767px以下)
+Base & Typography
 -------------------------------------------*/
-@media screen and (max-width: 767px) {
-  /* 1. ヘッダーのレイアウトを横並びに戻す */
-  #header {
-    flex-direction: row !important; /* 縦並びを解除 */
-    justify-content: space-between !important; /* ロゴを左、ボタンを右へ */
-    padding: 20px !important;
-    height: 70px !important;
-    position: fixed !important; /* スマホでは上部に固定 */
-    background-color: rgba(253, 248, 248, 0.95) !important;
-  }
+html { font-size: 100%; scroll-behavior: smooth; }
+body {
+  background-color: #fdf8f8;
+  color: #333;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+img { max-width: 100%; height: auto; vertical-align: bottom; }
+li { list-style: none; }
+a { color: #333; text-decoration: none; transition: 0.3s; }
+a:hover { opacity: 0.7; }
 
-  /* 2. 通常のナビゲーションを画面外に隠す */
-  #js-nav {
-    position: fixed;
-    top: 0;
-    right: -100%; /* これで画面の右側に隠れます */
-    width: 80%;
-    height: 100vh;
-    background-color: rgba(253, 248, 248, 0.98);
-    transition: all 0.5s ease;
-    z-index: 1500;
-    padding-top: 100px;
-    display: block !important; /* 消えていた場合のために表示 */
-  }
+.wrapper { max-width: 1040px; padding: 0 20px; margin: 0 auto; }
 
-  /* 3. ボタンを押した時（active）だけ画面内に入れる */
-  #js-nav.active {
-    right: 0 !important;
-  }
+/*-------------------------------------------
+Header (ロゴとナビが縦に並ぶシンプル構成)
+-------------------------------------------*/
+#header {
+  padding: 40px 0 20px;
+  text-align: center;
+}
 
-  /* 4. メニューを縦並びにする */
-  .nav-list {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 40px !important;
-    margin-top: 0 !important;
-  }
+#header .logo img {
+  width: 90px;
+  margin-bottom: 20px;
+  /* ロゴの色をグレーにするフィルター */
+  filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
 
-  .nav-list li a {
-    font-size: 18px !important;
-  }
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
 
-  /* 5. ハンバーガーボタンを強制表示 */
-  .hamburger {
-    display: block !important;
-    position: relative !important; /* ヘッダー内の適切な位置に */
-    top: auto !important;
-    right: auto !important;
-  }
+.nav-list li a {
+  font-family: 'YuMincho', serif;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+}
 
-  /* 6. メインコンテンツがヘッダーに被らないよう調整 */
-  main {
-    padding-top: 100px !important;
-  }
+/* スマホではハンバーガーを使わず、そのまま並べる */
+.hamburger {
+  display: none !important;
 }
 
 /*-------------------------------------------
-Smartphone (767px以下)
+Main & Sections
+-------------------------------------------*/
+main {
+  padding-bottom: 100px;
+}
+
+.main-visual {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.concept, .new-type {
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.section-title {
+  font-family: 'YuMincho', serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+  letter-spacing: 0.15em;
+}
+
+.description {
+  font-size: 15px;
+  text-align: justify;
+}
+
+.new-type .img, .concept .img { width: 25%; }
+.concept .img { order: 2; }
+.concept .text { order: 1; }
+
+/*-------------------------------------------
+Skills (Tools)
+-------------------------------------------*/
+.service-details { padding: 60px 0; }
+.service-block { margin-bottom: 60px; border-bottom: 1px solid #e0e0e0; padding-bottom: 40px; }
+.tool-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.tool-tags li { font-size: 12px; padding: 6px 15px; border: 1px solid #333; border-radius: 20px; }
+
+/*-------------------------------------------
+Contact
+-------------------------------------------*/
+.contact-form { max-width: 600px; margin: 60px auto; }
+.form-item { margin-bottom: 25px; }
+.form-item label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 8px; }
+.form-item input, .form-item textarea {
+  width: 100%; padding: 12px; border: 1px solid #333; box-sizing: border-box;
+}
+.submit-btn {
+  display: block; width: 220px; margin: 40px auto; padding: 16px 0;
+  background-color: #333; color: #fff; border: none; cursor: pointer;
+}
+
+/*-------------------------------------------
+Footer
+-------------------------------------------*/
+#footer {
+  background-color: #666;
+  padding: 60px 0;
+  text-align: center;
+  color: #fff;
+}
+#footer .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#footer .logo img {
+  width: 70px;
+  filter: brightness(0) invert(1); /* 白抜き */
+}
+#footer .footer-link {
+  display: flex;
+  gap: 15px;
+  font-size: 11px;
+}
+#footer .footer-link a { color: #fff; }
+.copyright { font-size: 10px; opacity: 0.7; }
+
+/*-------------------------------------------
+Smartphone Adjustments
 -------------------------------------------*/
 @media screen and (max-width: 767px) {
-  /* 1. ヘッダーのレイアウトを横並びに戻す */
-  #header {
-    flex-direction: row !important; /* 縦並びを解除 */
-    justify-content: space-between !important; /* ロゴを左、ボタンを右へ */
-    padding: 20px !important;
-    height: 70px !important;
-    position: fixed !important; /* スマホでは上部に固定 */
-    background-color: rgba(253, 248, 248, 0.95) !important;
+  .concept, .new-type {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
   }
-
-  /* 2. 通常のナビゲーションを画面外に隠す */
-  #js-nav {
-    position: fixed;
-    top: 0;
-    right: -100%; /* これで画面の右側に隠れます */
-    width: 80%;
-    height: 100vh;
-    background-color: rgba(253, 248, 248, 0.98);
-    transition: all 0.5s ease;
-    z-index: 1500;
-    padding-top: 100px;
-    display: block !important; /* 消えていた場合のために表示 */
-  }
-
-  /* 3. ボタンを押した時（active）だけ画面内に入れる */
-  #js-nav.active {
-    right: 0 !important;
-  }
-
-  /* 4. メニューを縦並びにする */
-  .nav-list {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 40px !important;
-    margin-top: 0 !important;
-  }
-
-  .nav-list li a {
-    font-size: 18px !important;
-  }
-
-  /* 5. ハンバーガーボタンを強制表示 */
-  .hamburger {
-    display: block !important;
-    position: relative !important; /* ヘッダー内の適切な位置に */
-    top: auto !important;
-    right: auto !important;
-  }
-
-  /* 6. メインコンテンツがヘッダーに被らないよう調整 */
-  main {
-    padding-top: 100px !important;
-  }
+  .concept .img, .new-type .img { width: 80%; }
+  .nav-list { gap: 15px; }
+  .nav-list li a { font-size: 11px; }
 }
