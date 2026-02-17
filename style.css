@@ -835,3 +835,67 @@ Contact & Footer
   100% { top: 100%; transform: scale(0.7); }
 }
 
+/* ===========================================
+   【最終修正】しずくの白っぽさを消し、粘り気を出す
+   =========================================== */
+
+/* 1. 土台の修正：クラス名をHTMLと合わせ、背景をサイトの色に固定 */
+.container, .drip-section, [class*="drops-container"] {
+  position: relative !important;
+  background-color: #fdf8f8 !important; /* ★白っぽさの正体を消す */
+  width: 100% !important;
+  height: 350px !important;
+  filter: contrast(30) brightness(1) !important; /* ★粘り気を出す */
+  -webkit-filter: contrast(30) brightness(1) !important;
+  overflow: hidden !important;
+  opacity: 1 !important; /* ★半透明を解除 */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 2. 上部の膜（自然に繋がるように） */
+.bar1 {
+  position: absolute !important;
+  top: -10px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 30px !important;
+  background: #00ffff !important;
+  filter: blur(15px) !important;
+}
+
+/* 3. しずく本体：サイズとボカシを調整 */
+.drops div {
+  position: absolute !important;
+  background-color: #00ffff !important;
+  width: 45px !important; 
+  height: 45px !important;
+  border-radius: 50% !important;
+  filter: blur(12px) !important; /* ★これが粘り気の素 */
+  -webkit-filter: blur(12px) !important;
+  animation: drop-anim 8s linear infinite !important;
+  opacity: 0;
+}
+
+/* 4. アニメーション：ゆっくり、粘って、落ちる */
+@keyframes drop-anim {
+  0% {
+    top: -60px;
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  /* 粘って伸びる時間を長くする */
+  40% {
+    top: 5px; 
+    transform: scale(0.9, 1.5); /* 縦にぐーっと伸びる */
+  }
+  100% {
+    top: 100%;
+    transform: scale(0.7);
+    opacity: 0;
+  }
+}
+
