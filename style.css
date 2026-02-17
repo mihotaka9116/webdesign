@@ -546,3 +546,62 @@ body{
   opacity: 0;
 }
 
+body {
+  margin: 0;
+}
+
+p {
+  margin: 10px;
+}
+
+.container {
+  position: relative;
+  background: #000;
+  width: 100%;
+  height: 300px;
+  filter: hue-rotate(330deg) brightness(200%);
+}
+
+.blend-area {
+  width: 100%;
+  height: 100%;
+  filter: blur(10px) contrast(20);
+  background: #000;
+  overflow: hidden;
+}
+
+.bar {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: #4169e1;
+}
+
+.drip {
+  position: absolute;
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 60px;
+  border-radius: 50%;
+  background: #4169e1;
+  animation: drip-anim 3s linear infinite;
+}
+
+
+@keyframes drip-anim {
+  0% {
+    top: -25px;
+    transform: scale(0.2);
+  }
+
+  90% {
+    top: 30px;
+    transform: scale(1);
+  }
+
+  100% {
+    top: 100%;
+    transform: scale(1);
+  }
+}
+
