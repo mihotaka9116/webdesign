@@ -899,3 +899,15 @@ Contact & Footer
   }
 }
 
+/* --- 横長バーの厚みを出す設定 --- */
+.bar1 {
+  position: absolute !important;
+  top: -20px !important;    /* ★高さを出した分、少し上にずらして馴染ませる */
+  left: 0 !important;
+  width: 100% !important;
+  height: 60px !important;   /* ★ここをお好みの高さに（元の15px〜30pxから大幅アップ） */
+  background: #00ffff !important;
+  filter: blur(20px) !important; /* ★厚みに合わせてぼかしも強くすると、より液体らしくなります */
+  z-index: 2;
+}
+
