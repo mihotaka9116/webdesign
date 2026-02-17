@@ -605,3 +605,7 @@ p {
     transform: scale(0.65);
   }
 }
+
+.drip-section {
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
