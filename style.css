@@ -891,3 +891,158 @@ Smartphone
   .concept .img, .new-type .img { width: 80%; order: 1; }
   .concept .text, .new-type .text { order: 2; width: 100%; }
 }
+
+@charset "UTF-8";
+
+/*-------------------------------------------
+Base & Typography
+-------------------------------------------*/
+html { font-size: 100%; scroll-behavior: smooth; }
+body {
+  background-color: #fdf8f8; /* サイト本来の色 */
+  color: #333;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+img { max-width: 100%; height: auto; vertical-align: bottom; }
+li { list-style: none; }
+a { color: #333; text-decoration: none; transition: opacity 0.3s; }
+
+/* ★画像・ロゴはホバーしても薄くしない（白っぽくなるのを防止） */
+a:hover { opacity: 0.7; }
+a:hover img, 
+#header .logo a:hover, 
+#footer .logo a:hover,
+.main-visual a:hover { 
+  opacity: 1 !important; 
+}
+
+.wrapper { max-width: 1040px; padding: 0 20px; margin: 0 auto; }
+
+/*-------------------------------------------
+Header
+-------------------------------------------*/
+#header {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 60px 0 20px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#header .logo img {
+  width: 60px !important;
+  filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+.nav-list { display: flex; gap: 30px; justify-content: center; margin-top: 15px; }
+.nav-list li a { font-family: 'YuMincho', serif; font-size: 14px; letter-spacing: 0.15em; }
+
+/*-------------------------------------------
+Main & Visual
+-------------------------------------------*/
+main { padding-top: 220px; }
+
+.main-visual {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto 0; /* 下のしずくとくっつける */
+  text-align: center;
+}
+
+/*-------------------------------------------
+しずくのアニメーション (改善版)
+-------------------------------------------*/
+.container {
+  position: relative;
+  background: #fdf8f8; /* サイト背景と同じにする */
+  width: 100%;
+  height: 250px;
+  filter: contrast(20); /* 粘り気を出すために必須 */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ★しずくの大きさを一回り大きく、ハッキリさせました */
+.drops div {
+  position: absolute;
+  top: -100px;
+  width: 25px !important;   /* 15pxから25pxに拡大 */
+  height: 35px !important;  /* 25pxから35pxに拡大 */
+  border-radius: 50%;
+  background: #00ffff !important; 
+  filter: blur(6px) !important; /* ぼかしを少し強めて粘り気を出す */
+  animation: drop-anim 8s linear infinite !important;
+  opacity: 0;
+}
+
+/* しずくの配置 */
+.drops div:nth-child(1) { left: 10%; animation-delay: 0s; }
+.drops div:nth-child(2) { left: 20%; animation-delay: 2s; }
+.drops div:nth-child(3) { left: 35%; animation-delay: 4s; }
+.drops div:nth-child(4) { left: 50%; animation-delay: 1s; }
+.drops div:nth-child(5) { left: 65%; animation-delay: 3s; }
+.drops div:nth-child(6) { left: 80%; animation-delay: 5s; }
+.drops div:nth-child(7) { left: 90%; animation-delay: 2.5s; }
+
+@keyframes drop-anim {
+  0% { top: -40px; transform: scale(0.6); opacity: 0; }
+  10% { opacity: 1; }
+  60% { top: 40px; transform: scale(1.1, 1.4); } /* 粘って伸びる */
+  100% { top: 250px; transform: scale(0.8); opacity: 0; }
+}
+
+/*-------------------------------------------
+Skills & Portfolio
+-------------------------------------------*/
+.concept, .new-type { padding: 80px 0; display: flex; align-items: center; justify-content: center; gap: 60px; }
+.section-title { font-family: 'YuMincho', serif; font-size: 28px; margin-bottom: 20px; letter-spacing: 0.15em; }
+.description { font-size: 15px; text-align: justify; }
+
+.new-type .img, .concept .img { width: 25%; }
+.concept .img { order: 2; }
+.concept .text { order: 1; }
+
+.tool-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.tool-tags li { 
+  font-size: 12px; padding: 6px 15px; border: 1px solid #333; border-radius: 20px; 
+  transition: 0.3s;
+}
+.tool-tags li:hover { background: #333; color: #fff; }
+
+/*-------------------------------------------
+Contact & Footer
+-------------------------------------------*/
+.contact-form { max-width: 600px; margin: 60px auto 120px; padding: 0 20px; }
+.form-item { margin-bottom: 25px; }
+.form-item label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 8px; }
+.form-item input, .form-item textarea { width: 100%; padding: 12px; border: 1px solid #333; box-sizing: border-box; }
+.expand-textarea { height: 50px; transition: height 0.4s ease; resize: none; }
+.expand-textarea:focus { height: 200px; outline: none; }
+
+.submit-btn {
+  display: block; width: 220px; margin: 40px auto; padding: 16px 0;
+  background-color: #333; color: #fff; border: 1px solid #333; cursor: pointer; transition: 0.3s;
+}
+.submit-btn:hover { background-color: #fff; color: #333; }
+
+#footer { background-color: #666; padding: 60px 0; margin-top: 100px; text-align: center; }
+#footer .inner { display: flex; flex-direction: column; align-items: center; gap: 25px; }
+#footer .logo img { width: 60px !important; filter: brightness(0) invert(1); opacity: 0.9; }
+#footer .footer-link { display: flex; justify-content: center; gap: 15px; }
+#footer .footer-link a { color: #fff; font-size: 11px; }
+#footer .copyright { color: #fff; font-size: 10px; opacity: 0.6; }
+
+/* スマホ対応 */
+@media screen and (max-width: 767px) {
+  main { padding-top: 150px; }
+  .concept, .new-type { flex-direction: column; text-align: center; gap: 30px; }
+  .concept .img, .new-type .img { width: 80%; }
+}
