@@ -647,3 +647,15 @@ p {
     padding: 0 20px; /* スマホで左右に少し余白を作る場合 */
   }
 }
+
+main {
+  /* 220pxから、ロゴの高さ＋α（120px〜150px程度）に減らします */
+  padding-top: 130px; 
+}
+
+.main-visual {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto 60px; /* ここの最初の「0」が上の余白です。0になっていればOK */
+  text-align: center;
+}
