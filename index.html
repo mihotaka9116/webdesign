@@ -1,209 +1,197 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miho Takahashi Portfolio</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN (for utility classes) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="utf-8">
+  <title>Miho Takahashi Design | SERVICE</title>
+  <meta name="description" content="Miho Takahashi Designができること。WEBデザインからコーディングまでお引き受けいたします。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#fdf8f8] text-[#333] font-sans">
 
-    <!-- ページローダー -->
-    <div id="page-loader">
-        <div class="loader-inner">
-            <div class="loader-line"></div>
-            <p class="loader-text">LOADING</p>
+<body>
+<header id="header">
+  <h1 class="logo">
+    <a href="index.html"> <img src="tlogo.svg" alt="Beauty"></a>
+  </h1>
+
+  <nav id="js-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="#service">SERVICE</a></li>
+      <li><a href="#portfolio">PORTFOLIO</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <div class="hamburger" id="js-hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+  
+<main>
+  <div class="main-visual">
+    <img src="umi.svg" alt="メインビジュアル">
+  </div>
+
+  <div class="page-header-simple wrapper" style="padding: 60px 0; text-align: center;">
+    <h1 style="font-family: 'YuMincho', serif; font-size: 36px; font-weight: normal; letter-spacing: 0.1em;">
+      Miho Takahashiができること
+    </h1>
+  </div>
+
+  <section id="service">
+    <div class="new-type" style="padding-top: 60px;">
+      <div class="text">
+        <div class="text-inner">
+          <h2 class="section-title">Web Design / Coding</h2>
+          <p class="description">
+            ただ美しいだけでなく、その先の「使いやすさ」を大切にしたWebサイトを制作します。丁寧なヒアリングを元に、WEBデザイン、HTML/CSSによる実装まで一貫してお引き受けいたします。
+          </p>
         </div>
+      </div>
+      <div class="img">
+        <img src="siteimage.svg" alt="WEBデザイン">
+      </div>
     </div>
 
-    <header id="header">
-        <h1 class="logo">
-            <a href="#" id="logo-link">
-                <img src="https://api.dicebear.com/9.x/initials/svg?seed=BT&backgroundColor=333333&fontFamily=YuMincho" alt="Beauty">
-            </a>
-        </h1>
+    <section class="concept wrapper" style="padding-top: 100px;">
+      <div class="img">
+        <img src="crosslogo.svg" alt="グラフィックデザイン">
+      </div>
+      <div class="text">
+        <h2 class="section-title">Graphic Design</h2>
+        <p class="description">
+          ロゴ、名刺など、ブランドの顔となるグラフィックを制作します。
+        </p>
+      </div>
+    </section>
 
-        <div class="hamburger" id="js-hamburger">
-            <span></span>
-            <span></span>
+    <div class="service-details wrapper" style="margin-top: 100px; padding-bottom: 50px;">
+      <div class="service-block">
+        <div class="text-area">
+          <h2 class="section-title">Design Tools</h2>
+          <p class="description">
+            Figmaを用いたデザインから、Photoshop・Illustratorでのグラフィック制作まで、目的に合わせた最適なツールを選択し、美しいビジュアルを追求します。
+          </p>
+          <ul class="tool-tags">
+            <li>Figma</li>
+            <li>Illustrator</li>
+            <li>Photoshop</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="text-area">
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="description">
+            HTML/CSSを用いたレスポンシブな実装に加え、JavaScriptによる動きの演出も行います。
+          </p>
+          <ul class="tool-tags">
+            <li>HTML5 / CSS3</li>
+            <li>JavaScript</li>
+            <li>WordPress</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="portfolio" class="portfolio-lead wrapper" style="margin-top: 50px; text-align: center;">
+    <p class="lead-text" style="font-size: 14px; color: #888; margin-bottom: 30px; letter-spacing: 0.1em;">制作実績をこちらからご覧いただけます</p>
+    <div class="portfolio-buttons">
+      <div class="btn-box">
+        <span class="btn-label">Design & Direction</span>
+        <a href="https://mihotaka9116.github.io/portfolio/" class="view-more-btn" target="_blank" rel="noopener noreferrer">WEB PORTFOLIO</a>
+      </div>
+      <div class="btn-box">
+        <span class="btn-label">Creative Works</span>
+        <a href="https://mihotaka9116.github.io/creative/" class="view-more-btn" target="_blank" rel="noopener noreferrer">CREATIVE SITE</a>
+      </div>
+      <div class="btn-box">
+        <span class="btn-label">Modern Coding</span>
+        <a href="https://mihotaka9116.github.io/moderncording/" class="view-more-btn" target="_blank" rel="noopener noreferrer">MODERN RETREAT</a>
+      </div>
+      <div class="btn-box">
+        <span class="btn-label">Traditional Craft</span>
+        <a href="https://mihotaka9116.github.io/yamabudouami/" class="view-more-btn" target="_blank" rel="noopener noreferrer">YAMABUDOU AMI</a>
+      </div>
+    </div>
+  </div>
+
+  <<section id="contact" class="wrapper">
+    <div class="page-header-simple" style="padding: 100px 0 40px; text-align: center;">
+      <h2 class="section-title" style="font-family: 'YuMincho', serif; font-size: 30px;">CONTACT</h2>
+      <p style="font-size: 14px; color: #888; margin-top: 10px;">お仕事のご依頼・ご相談は、以下のフォームよりご連絡ください。</p>
+    </div>
+
+    <div class="contact-form">
+      <form action="https://ssgform.com/s/rI0UaMqc0NXO" method="post">
+        <div class="form-item">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="your-name" required>
+        </div>
+        <div class="form-item">
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" name="your-email" required>
+        </div>
+        <div class="form-item">
+          <label for="message">メッセージ</label>
+          <textarea id="message" name="your-message" class="expand-textarea" placeholder="クリックすると広がります" required></textarea>
+        </div>
+        <div class="form-item agreement-item" style="text-align: center; margin-bottom: 20px;">
+          <input type="checkbox" id="agreement" name="agreement" required>
+          <label for="agreement" style="font-size: 14px; color: #666;">
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color: #888; text-decoration: underline;">プライバシーポリシー</a>に同意する
+          </label>
         </div>
 
-        <nav class="nav" id="js-nav">
-            <ul class="nav-list">
-                <li><a href="#" class="nav-home">HOME</a></li>
-                <li><a href="#service" class="nav-link">SERVICE</a></li>
-                <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
-                <li><a href="#blog" class="nav-link">BLOG</a></li>
-                <li><a href="#contact" class="nav-link">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+        <button type="submit" class="submit-btn" disabled style="background-color: #ccc; cursor: not-allowed; border: none; width: 100%; padding: 15px; color: #fff; font-weight: bold;">
+          現在受付停止中です
+        </button>
+        <p style="font-size: 12px; color: #f48451; margin-top: 15px; text-align: center; line-height: 1.6;">
+          ※ポートフォリオ公開準備中のため、現在お問い合わせフォームはご利用いただけません。
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
 
-    <main id="main-content">
-        <!-- Home Content -->
-        <div id="home-view">
-            <div class="page-header-simple wrapper reveal" style="padding: 140px 0 60px; text-align: center;">
-                <h1 style="font-family: 'Noto Serif JP', serif; fontSize: 36px; font-weight: normal; letter-spacing: 0.1em;">
-                    Miho Takahashiができること
-                </h1>
-            </div>
+<footer id="footer">
+  <div class="inner wrapper">
+    <div class="logo">
+      <img src="tlogo.svg" alt="Beauty">
+    </div>
+    <div class="footer-link" style="margin-top: 10px; margin-bottom: 10px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+      <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: #888; text-decoration: none;">プライバシーポリシー</a>
+      <a href="tokusho.html" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: #888; text-decoration: none;">特定商取引法に基づく表記</a>
+      <a href="kiyaku.html" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: #888; text-decoration: none;">利用規約</a>
+    </div>
+    <p class="copyright" style="font-size: 10px; color: #aaa; text-align: center;">©2026 Miho Takahashi</p>
+  </div>
+</footer>
 
-            <section id="service">
-                <div class="new-type reveal" style="padding-top: 60px;">
-                    <div class="text reveal-left">
-                        <div class="text-inner">
-                            <h2 class="section-title">Web Design / Coding</h2>
-                            <p class="description">
-                                ただ美しいだけでなく、その先の「使いやすさ」を大切にしたWebサイトを制作します。丁寧なヒアリングを元に、コンセプト設計からデザイン、HTML/CSSによる実装まで一貫してお引き受けいたします。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="img reveal-right">
-                        <img src="https://picsum.photos/seed/web/800/600" alt="WEBデザイン">
-                    </div>
-                </div>
+<script>
+  const hamburger = document.getElementById('js-hamburger');
+  const nav = document.getElementById('js-nav');
+  const navLinks = document.querySelectorAll('.nav-list a');
 
-                <section class="concept wrapper reveal" style="padding-top: 100px;">
-                    <div class="img reveal-left">
-                        <img src="https://picsum.photos/seed/graphic/800/600" alt="グラフィックデザイン">
-                    </div>
-                    <div class="text reveal-right" style="top: 150px;">
-                        <h2 class="section-title">Graphic Design</h2>
-                        <p class="description">
-                            ロゴ、名刺など、ブランドの顔となるグラフィックを制作します。清潔感と品のある世界観の表現を得意としています。
-                        </p>
-                    </div>
-                </section>
+  if(hamburger && nav) {
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
 
-                <div class="service-details wrapper" style="margin-top: 100px; padding-bottom: 50px;">
-                    <div class="service-block">
-                        <div class="text-area">
-                            <h2 class="section-title">Design Tools</h2>
-                            <p class="description">
-                                Figmaを用いたデザインから、Photoshop・Illustratorでのグラフィック制作まで、目的に合わせた最適なツールを選択し、美しいビジュアルを追求します。
-                            </p>
-                            <ul class="tool-tags">
-                                <li>Figma</li>
-                                <li>Illustrator</li>
-                                <li>Photoshop</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-block">
-                        <div class="text-area">
-                            <h2 class="section-title">Technical Skills</h2>
-                            <p class="description">
-                                HTML/CSSを用いたレスポンシブな実装に加え、JavaScriptによる動きの演出を得意としています。デザインの繊細さを崩さない、滑らかなユーザー体験を提供します。
-                            </p>
-                            <ul class="tool-tags">
-                                <li>HTML5 / CSS3</li>
-                                <li>JavaScript</li>
-                                <li>WordPress</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div id="portfolio" class="portfolio-lead wrapper reveal" style="margin-top: 50px; text-align: center;">
-                <p class="lead-text" style="font-size: 14px; color: #888; margin-bottom: 30px; letter-spacing: 0.1em;">制作実績をこちらからご覧いただけます</p>
-                <div class="portfolio-buttons">
-                    <div class="btn-box reveal" style="--delay: 1">
-                        <span class="btn-label">Design & Direction</span>
-                        <a href="https://mihotaka9116.github.io/portfolio/" class="view-more-btn" target="_blank">WEB PORTFOLIO</a>
-                    </div>
-                    <div class="btn-box reveal" style="--delay: 2">
-                        <span class="btn-label">Creative Works</span>
-                        <a href="https://mihotaka9116.github.io/creative/" class="view-more-btn" target="_blank">CREATIVE SITE</a>
-                    </div>
-                    <div class="btn-box reveal" style="--delay: 3">
-                        <span class="btn-label">Modern Coding</span>
-                        <a href="https://mihotaka9116.github.io/moderncording/" class="view-more-btn" target="_blank">MODERN RETREAT</a>
-                    </div>
-                    <div class="btn-box reveal" style="--delay: 4">
-                        <span class="btn-label">Traditional Craft</span>
-                        <a href="https://mihotaka9116.github.io/yamabudouami/" class="view-more-btn" target="_blank">YAMABUDOU AMI</a>
-                    </div>
-                </div>
-            </div>
-
-            <section id="blog" class="blog wrapper reveal" style="margin-top: 130px;">
-                <h2 class="section-title" style="text-align: center; margin-bottom: 60px; font-family: 'Noto Serif JP', serif; font-weight: normal;">Recent Blog</h2>
-                <div class="blog-grid" id="blog-grid">
-                    <!-- Blog items will be injected by JS -->
-                </div>
-            </section>
-
-            <section id="testimonials" class="testimonials wrapper reveal" style="margin-top: 130px; padding-bottom: 50px;">
-                <h2 class="section-title" style="text-align: center; margin-bottom: 60px; font-family: 'Noto Serif JP', serif; font-weight: normal;">Client Testimonials</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial-item reveal" style="--delay: 1">
-                        <p class="quote">「こちらの要望を深く汲み取っていただき、想像以上の素晴らしいサイトになりました。使いやすさも抜群です。」</p>
-                        <div class="client-info">
-                            <p class="name">佐藤 健太 様</p>
-                            <p class="role">株式会社テクログ 代表取締役</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item reveal" style="--delay: 2">
-                        <p class="quote">「デザインの繊細さと、実装の丁寧さに感動しました。ブランドのイメージがより明確に伝わるようになりました。」</p>
-                        <div class="client-info">
-                            <p class="name">田中 美咲 様</p>
-                            <p class="role">アトリエ・フルール デザイナー</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-item reveal" style="--delay: 3">
-                        <p class="quote">「ヒアリングから納品まで非常にスムーズで、安心してお任せすることができました。またお願いしたいです。」</p>
-                        <div class="client-info">
-                            <p class="name">鈴木 一郎 様</p>
-                            <p class="role">カフェ・ド・パリ オーナー</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div id="contact" class="online-store" style="margin-top: 130px;">
-                <div class="box">
-                    <p class="title" style="letter-spacing: 0.2em;">CONTACT</p>
-                    <p style="color: #fff; margin-bottom: 20px; font-size: 14px;">お仕事のご相談はこちらから</p>
-                    <a class="btn" href="#">MESSAGE</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Article View (Hidden by default) -->
-        <div id="article-view" class="hidden">
-            <article class="article-page wrapper" style="padding-top: 140px; padding-bottom: 100px;">
-                <button id="back-to-list" class="back-btn">← BACK TO LIST</button>
-                <div id="article-detail">
-                    <!-- Article content will be injected by JS -->
-                </div>
-            </article>
-        </div>
-    </main>
-
-    <footer id="footer">
-        <div class="inner wrapper">
-            <div class="footer-left">
-                <div class="logo">
-                    <img src="https://api.dicebear.com/9.x/initials/svg?seed=BT&backgroundColor=ffffff&fontFamily=YuMincho" alt="Beauty" style="width: 80px;">
-                </div>
-                <p class="copyright">©2024 Beauty.</p>
-            </div>
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
-                <a href="#" aria-label="Behance"><i data-lucide="palette"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+      });
+    });
+  }
+</script>
 </body>
 </html>
