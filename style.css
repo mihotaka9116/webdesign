@@ -14,7 +14,7 @@
   --ease:         cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --header-h:     64px;
   /* サイドの余白：スマホは大きめに */
-  --side-pad:     clamp(20px, 5vw, 60px);
+  --side-pad:     clamp(24px, 6vw, 80px);
 }
 
 /* =============================================
@@ -207,6 +207,26 @@ main { padding-bottom: 100px; }
 }
 .main-visual img { width: 100%; }
 
+
+/* =============================================
+   Ocean Canvas Animation
+   ============================================= */
+.ocean-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.ocean-wrap img {
+  width: 100%;
+  display: block;
+}
+#ocean-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 /* =============================================
    Section 共通
    ============================================= */
@@ -425,4 +445,9 @@ main { padding-bottom: 100px; }
 
   /* ロゴサイズ小さく */
   .logo img { width: 52px; }
+
+  /* スマホの余白をしっかり確保 */
+  :root { --side-pad: 28px; }
+  .new-type, .concept { padding-left: 0; padding-right: 0; }
+  .service-details { padding-left: 0; padding-right: 0; }
 }
