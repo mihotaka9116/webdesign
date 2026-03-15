@@ -374,10 +374,21 @@ main { padding-bottom: 100px; }
    Tablet（768px〜1024px）
    ============================================= */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  :root { --side-pad: 40px; }
   .new-type { gap: 40px; padding: 60px 0; }
   .new-type__img { flex: 0 0 44%; }
   .concept { gap: 40px; padding: 60px 0; }
   .portfolio-buttons { gap: 20px; }
+
+  /* タブレットも両端に余白 */
+  .new-type,
+  .concept,
+  .service-details,
+  .portfolio-lead,
+  #contact {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
 }
 
 /* =============================================
@@ -447,7 +458,15 @@ main { padding-bottom: 100px; }
   .logo img { width: 52px; }
 
   /* スマホの余白をしっかり確保 */
-  :root { --side-pad: 28px; }
-  .new-type, .concept { padding-left: 0; padding-right: 0; }
-  .service-details { padding-left: 0; padding-right: 0; }
+  :root { --side-pad: 20px; }
+
+  /* wrapperを使っていないセクションにも余白を付与 */
+  .new-type,
+  .concept,
+  .service-details,
+  .portfolio-lead,
+  #contact {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
