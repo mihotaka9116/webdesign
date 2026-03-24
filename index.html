@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <!-- ヘッダー：ロゴ左・ナビ右・ハンバーガー右(スマホ) -->
+  <!-- ヘッダー -->
   <header id="header">
     <div class="header-inner wrapper">
       <h1 class="logo">
@@ -33,7 +33,6 @@
           <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
-      <!-- ハンバーガーボタン(スマホのみ表示) -->
       <button class="hamburger" id="js-hamburger" aria-label="メニューを開く" aria-expanded="false">
         <span></span>
         <span></span>
@@ -43,6 +42,8 @@
   </header>
 
   <main>
+
+    <!-- メインビジュアル -->
     <div class="main-visual reveal">
       <div class="ocean-wrap">
         <img src="umi.svg" alt="メインビジュアル">
@@ -50,31 +51,34 @@
       </div>
     </div>
 
-    <div class="page-header-simple wrapper reveal" style="padding: 60px 0; text-align: center;">
+    <!-- ページタイトル -->
+    <div class="page-header-simple wrapper reveal">
       <h1 class="hero-title">Miho Takahashiができること</h1>
     </div>
 
+    <!-- サービス -->
     <section id="service">
 
       <!-- Web Design / Coding -->
-      <div class="new-type wrapper">
-        <div class="new-type__text reveal-left">
+      <div class="new-type two-col wrapper">
+        <div class="two-col__text reveal-left">
           <h2 class="section-title">Web Design / Coding</h2>
           <p class="description">
-            ただ美しいだけでなく、その先の「使いやすさ」を大切にしたWebサイトを制作します。<br>丁寧なヒアリングをもとに、WEBデザイン、HTML/CSSによる実装まで一貫してお引き受けいたします。
+            ただ美しいだけでなく、その先の「使いやすさ」を大切にしたWebサイトを制作します。<br>
+            丁寧なヒアリングをもとに、WEBデザイン、HTML/CSSによる実装まで一貫してお引き受けいたします。
           </p>
         </div>
-        <div class="new-type__img reveal-right">
+        <div class="two-col__img reveal-right">
           <img src="siteimage.svg" alt="WEBデザイン">
         </div>
       </div>
 
       <!-- Graphic Design -->
-      <div class="concept wrapper">
-        <div class="concept__img reveal-left">
+      <div class="concept two-col wrapper">
+        <div class="two-col__img reveal-left">
           <img src="crosslogo.svg" alt="グラフィックデザイン">
         </div>
-        <div class="concept__text reveal-right">
+        <div class="two-col__text reveal-right">
           <h2 class="section-title">Graphic Design</h2>
           <p class="description">
             ロゴ、名刺など、ブランドの顔となるグラフィックを制作します。
@@ -114,19 +118,19 @@
     <div id="portfolio" class="portfolio-lead wrapper reveal">
       <p class="lead-text">制作実績をこちらからご覧いただけます</p>
       <div class="portfolio-buttons">
-        <div class="btn-box reveal" style="--delay:1">
+        <div class="btn-box reveal">
           <span class="btn-label">Design &amp; Direction</span>
           <a href="https://mihotaka9116.github.io/portfolio/" class="view-more-btn" target="_blank" rel="noopener noreferrer">WEB PORTFOLIO</a>
         </div>
-        <div class="btn-box reveal" style="--delay:2">
+        <div class="btn-box reveal">
           <span class="btn-label">Creative Works</span>
           <a href="https://mihotaka9116.github.io/creative/" class="view-more-btn" target="_blank" rel="noopener noreferrer">CREATIVE SITE</a>
         </div>
-        <div class="btn-box reveal" style="--delay:3">
+        <div class="btn-box reveal">
           <span class="btn-label">Modern Coding</span>
           <a href="https://mihotaka9116.github.io/moderncording/" class="view-more-btn" target="_blank" rel="noopener noreferrer">MODERN RETREAT</a>
         </div>
-        <div class="btn-box reveal" style="--delay:4">
+        <div class="btn-box reveal">
           <span class="btn-label">Traditional Craft</span>
           <a href="https://mihotaka9116.github.io/yamabudouami/" class="view-more-btn" target="_blank" rel="noopener noreferrer">YAMABUDOU AMI</a>
         </div>
@@ -164,6 +168,7 @@
         </form>
       </div>
     </section>
+
   </main>
 
   <footer id="footer">
